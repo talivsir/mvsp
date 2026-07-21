@@ -39,7 +39,7 @@
                 <dotlottie-wc
                     src="https://lottie.host/275d6049-993c-4af2-a805-ae3646f50fe9/orM6XtE4e9.json"
                     autoplay loop
-                    style="width:100%;max-width:280px;height:280px;display:block;margin:0 auto;">
+                    style="width:100%;max-width:360px;height:360px;display:block;margin:0 auto;">
                 </dotlottie-wc>
             </div>
 
@@ -67,7 +67,7 @@
             <dotlottie-wc
                 src="https://lottie.host/275d6049-993c-4af2-a805-ae3646f50fe9/orM6XtE4e9.json"
                 autoplay loop
-                style="width:300px;height:300px;display:block;">
+                style="width:480px;height:480px;display:block;">
             </dotlottie-wc>
         </div>
 
