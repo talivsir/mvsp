@@ -33,10 +33,7 @@
     <!-- Premium Preloader -->
     <div id="preloader" class="preloader">
         <div class="loader-content">
-            <svg class="loader-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="40" height="40" rx="10" fill="var(--color-primary)"/>
-                <path d="M12 28V12L20 20L28 12V28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <img class="loader-logo" src="assets/images/mvs-logo.png" alt="Maui Vehicle Storage">
             <div class="loader-line"></div>
         </div>
     </div>
