@@ -65,18 +65,22 @@
         <!-- ── RIGHT: Car visual ──────────────────────── -->
         <div class="lux-hero__visual">
             <div class="lux-hero__car-glow" aria-hidden="true"></div>
-            <img
-                src="assets/images/sports-car.png"
-                alt="Luxury classic car secured in Maui Vehicle Storage"
-                class="lux-hero__car"
-                draggable="false"
-                fetchpriority="high"
-            >
 
-            <!-- Floating glass stat card -->
-            <div class="lux-hero__stat">
-                <span class="lux-hero__stat-num">500<span>+</span></span>
-                <span class="lux-hero__stat-label">Vehicles kept<br>in pristine condition</span>
+            <!-- Light 3D glass frame holding the (transparent) car image -->
+            <div class="lux-hero__stage">
+                <img
+                    src="assets/images/sports-car.png"
+                    alt="Luxury car in secure Maui storage"
+                    class="lux-hero__car"
+                    draggable="false"
+                    fetchpriority="high"
+                >
+
+                <!-- Floating glass stat card -->
+                <div class="lux-hero__stat">
+                    <span class="lux-hero__stat-num">500<span>+</span></span>
+                    <span class="lux-hero__stat-label">Vehicles kept<br>in pristine condition</span>
+                </div>
             </div>
         </div><!-- /.lux-hero__visual -->
 

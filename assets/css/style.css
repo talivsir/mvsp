@@ -1737,30 +1737,53 @@ input:focus, select:focus, textarea:focus {
     background: radial-gradient(ellipse at center, rgba(42,167,255,0.45) 0%, rgba(212,175,55,0.20) 45%, transparent 68%);
     filter: blur(48px);
 }
-/* Car photo framed as a bright "showroom bay" card floating on the dark hero */
+/* Light, 3D glass frame ("stage") that holds the transparent car image */
+.lux-hero__stage {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(16px, 2vw, 30px);
+    border-radius: clamp(20px, 2.4vw, 30px);
+    background: linear-gradient(157deg,
+                rgba(255,255,255,0.18) 0%,
+                rgba(255,255,255,0.07) 52%,
+                rgba(255,255,255,0.03) 100%);
+    -webkit-backdrop-filter: blur(12px) saturate(130%);
+    backdrop-filter: blur(12px) saturate(130%);
+    border: 1px solid rgba(255,255,255,0.40);
+    /* light 3D border + soft light shade: bright top-left highlight, gentle depth shadow */
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.65),
+        inset 0 -1px 0 rgba(0,0,0,0.12),
+        0 30px 64px rgba(4,12,26,0.50),
+        0 4px 14px rgba(255,255,255,0.05);
+    animation: luxCarFloat 6.5s ease-in-out infinite;
+}
+/* Transparent car sits on the glass, grounded by a soft drop-shadow */
 .lux-hero__car {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 660px;
+    max-width: 520px;
     height: auto;
     object-fit: contain;
-    border-radius: clamp(16px, 1.8vw, 24px);
-    border: 1px solid rgba(255,255,255,0.55);
-    box-shadow: 0 34px 70px rgba(4, 12, 26, 0.55), 0 8px 22px rgba(4, 12, 26, 0.35);
-    animation: luxCarFloat 6s ease-in-out infinite;
+    filter: drop-shadow(0 24px 26px rgba(0,0,0,0.48));
 }
 @keyframes luxCarFloat {
     0%,100% { transform: translateY(0); }
-    50%     { transform: translateY(-14px); }
+    50%     { transform: translateY(-12px); }
 }
 
-/* Floating dark-glass stat card — reads clearly over the bright photo */
+/* Floating dark-glass stat card — anchored to the frame's corner */
 .lux-hero__stat {
     position: absolute;
     z-index: 3;
     left: -14px;
-    bottom: 22px;
+    bottom: -14px;
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -1788,27 +1811,28 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* ── Responsive ─────────────────────────── */
+/* Tablet & mobile: stack in the order heading → image → subheading → buttons.
+   display:contents lets the copy's children interleave with the image so the
+   image can sit between the heading and the subheading. */
 @media (max-width: 992px) {
     .lux-hero__inner {
         grid-template-columns: 1fr;
-        gap: clamp(24px, 6vw, 48px);
+        gap: clamp(14px, 3vw, 26px);
         text-align: center;
+        justify-items: center;
     }
-    .lux-hero__content {
-        order: 2;
+    .lux-hero__content { display: contents; }
+    .lux-hero__eyebrow  { order: 1; margin-bottom: 2px; }
+    .lux-hero__title    { order: 2; width: 100%; margin-bottom: 2px; }
+    .lux-hero__visual   {
+        order: 3;
         width: 100%;
-        max-width: 640px;
-        margin: 0 auto;
+        max-width: clamp(300px, 64vw, 440px);
+        margin: 6px auto;
     }
-    .lux-hero__visual {
-        order: 1;
-        width: 100%;
-        max-width: 560px;
-        margin: 0 auto;
-    }
-    .lux-hero__subtitle { margin-left: auto; margin-right: auto; }
-    .lux-hero__actions,
-    .lux-hero__trust { justify-content: center; }
+    .lux-hero__subtitle { order: 4; width: 100%; max-width: 560px; margin: 0 auto; }
+    .lux-hero__actions  { order: 5; justify-content: center; margin-bottom: 2px; }
+    .lux-hero__trust    { order: 6; justify-content: center; }
 }
 
 @media (max-width: 560px) {
@@ -1817,6 +1841,7 @@ input:focus, select:focus, textarea:focus {
         text-align: center;
     }
     .lux-hero__title { letter-spacing: -1px; }
+    .lux-hero__visual { max-width: clamp(258px, 76vw, 360px); }
     .lux-hero__actions { flex-direction: column; width: 100%; }
     .lux-hero__btn { width: 100%; }
     .lux-hero__stat { display: none; }
@@ -1827,8 +1852,7 @@ input:focus, select:focus, textarea:focus {
 /* Motion-safety */
 @media (prefers-reduced-motion: reduce) {
     .lux-hero__glow,
-    .lux-hero__car,
-    .lux-hero__car-shadow,
+    .lux-hero__stage,
     .lux-hero__eyebrow-dot { animation: none !important; }
 }
 
