@@ -52,15 +52,13 @@
     
     <header class="site-header transparent-top" id="siteHeader">
         <div class="container header-inner">
-            <!-- Animated Logo -->
+            <!-- Logo -->
             <a href="index.php" class="logo animated-logo">
-                <div class="logo-mark-wrap">
-                    <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="40" height="40" rx="10" fill="currentColor" class="logo-bg"/>
-                        <path d="M12 28V12L20 20L28 12V28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="logo-path"/>
-                    </svg>
-                </div>
-                <span class="logo-text">Maui Vehicle Storage</span>
+                <img
+                    src="assets/images/mvs-logo.png"
+                    alt="Maui Vehicle Storage"
+                    class="nav-logo-img"
+                >
             </a>
 
             <!-- Desktop Navigation Include -->
