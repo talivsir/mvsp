@@ -1,3 +1,6 @@
+<!-- Lottie Web Component -->
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
+
 <section class="award-hero-section" id="hero">
     
     <!-- Video Background -->
@@ -21,8 +24,8 @@
     </div>
 
     <div class="container hero-container">
-        
-        <!-- Text Content — Centered -->
+
+        <!-- LEFT: Text Content -->
         <div class="hero-content">
 
             <!-- Headline -->
@@ -30,10 +33,19 @@
                 Maui's #1 Vehicle Storage
                 <span class="text-gradient-gold type-text-wrapper"><span class="type-text" data-type="— Secure & Seamless."></span><span class="type-cursor"></span></span>
             </h1>
-            
+
+            <!-- Lottie Animation — shown BETWEEN heading & subtitle on mobile only -->
+            <div class="hero-lottie-mobile slide-up-anim" style="animation-delay: 0.35s;" aria-hidden="true">
+                <dotlottie-wc
+                    src="https://lottie.host/275d6049-993c-4af2-a805-ae3646f50fe9/orM6XtE4e9.json"
+                    autoplay loop
+                    style="width:100%;max-width:280px;height:280px;display:block;margin:0 auto;">
+                </dotlottie-wc>
+            </div>
+
             <!-- Subheadline -->
             <p class="hero-subtitle slide-up-anim" style="animation-delay: 0.3s;">
-                Climate-controlled storage, airport delivery & white-glove care for your vehicle in Kahului, Maui.
+                Climate-controlled storage, airport delivery &amp; white-glove care for your vehicle in Kahului, Maui.
             </p>
 
             <!-- CTAs -->
@@ -50,33 +62,14 @@
 
         </div>
 
-        <!-- Realistic Car Image -->
-        <div class="hero-car-wrapper">
-                    <div class="realistic-car-container">
-                        <!-- Car Body Image -->
-                        <img src="assets/images/hero_car_transparent.png" alt="Luxury Vehicle" class="realistic-car-body">
-                        
-                        <!-- Front Wheel -->
-                        <div class="realistic-wheel realistic-wheel-front">
-                            <img src="assets/images/hero_wheel.png" alt="Front Wheel">
-                        </div>
-                        
-                        <!-- Rear Wheel -->
-                        <div class="realistic-wheel realistic-wheel-rear">
-                            <img src="assets/images/hero_wheel.png" alt="Rear Wheel">
-                        </div>
-
-                        <!-- Floating badges -->
-                        <div class="car-badge car-badge-1">
-                            <span class="badge-icon">🏆</span>
-                            <span>Premium Storage</span>
-                        </div>
-                        <div class="car-badge car-badge-2">
-                            <span class="badge-icon">❄️</span>
-                            <span>Climate Safe</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- RIGHT: Lottie Animation — desktop only -->
+        <div class="hero-lottie-wrapper slide-in-right" style="animation-delay: 0.3s;" aria-hidden="true">
+            <dotlottie-wc
+                src="https://lottie.host/275d6049-993c-4af2-a805-ae3646f50fe9/orM6XtE4e9.json"
+                autoplay loop
+                style="width:300px;height:300px;display:block;">
+            </dotlottie-wc>
+        </div>
 
         <!-- Trust Metrics — full width below car -->
         <div class="hero-trust-metrics-wrapper slide-up-anim" style="animation-delay: 0.6s;">

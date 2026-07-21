@@ -336,6 +336,11 @@ img, video, canvas {
     box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
+/* Scrolled header: hamburger lines become dark */
+.site-header.scrolled .hamburger .line {
+    background: var(--color-dark);
+}
+
 /* Transparent Header Text Adjustments (Before Scroll) */
 .site-header.transparent-top:not(.scrolled) .logo-text,
 .site-header.transparent-top:not(.scrolled) .nav-link,
@@ -1603,29 +1608,30 @@ input:focus, select:focus, textarea:focus {
 .hero-shapes .shape-2 { width: 600px; height: 600px; background: var(--color-primary); bottom: -200px; left: -200px; }
 .hero-shapes .shape-3 { width: 300px; height: 300px; background: var(--color-success); top: 40%; left: 50%; }
 
-/* ---- LAYOUT: centered column on all screens ---- */
+/* ---- LAYOUT: Two-column row on desktop, column on mobile ---- */
 .hero-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 32px;
+    justify-content: space-between;
+    gap: 48px 48px;
     position: relative;
     z-index: 10;
     width: 100%;
     margin-top: clamp(20px, 4vh, 60px);
-    text-align: center;
 }
 
-/* ---- TEXT CONTENT ---- */
+/* ---- TEXT CONTENT (left column) ---- */
 .hero-content {
     color: #fff;
-    width: 100%;
-    max-width: 680px;
-    text-align: center;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 640px;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 /* Hero Title — shorter & fluid */
@@ -1653,7 +1659,24 @@ input:focus, select:focus, textarea:focus {
     margin-bottom: 28px;
     max-width: 500px;
     line-height: 1.6;
-    text-align: center;
+    text-align: left;
+}
+
+/* ---- LOTTIE WRAPPERS ---- */
+/* Desktop right column */
+.hero-lottie-wrapper {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* subtle glow behind the animation */
+    filter: drop-shadow(0 0 40px rgba(42, 167, 255, 0.25));
+}
+
+/* Mobile version (hidden on desktop) */
+.hero-lottie-mobile {
+    display: none;
+    width: 100%;
 }
 
 /* ---- BUTTONS ---- */
@@ -1662,7 +1685,7 @@ input:focus, select:focus, textarea:focus {
     flex-wrap: wrap;
     gap: 14px;
     margin-bottom: 0;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .btn-glow { box-shadow: 0 0 20px rgba(42, 167, 255, 0.4); }
 .btn-glass {
@@ -1673,9 +1696,10 @@ input:focus, select:focus, textarea:focus {
 }
 .btn-glass:hover { background: rgba(255, 255, 255, 0.2); }
 
-/* ---- TRUST METRICS ---- */
+/* ---- TRUST METRICS — full-width row below the two columns ---- */
 .hero-trust-metrics-wrapper {
     width: 100%;
+    flex-basis: 100%;
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
@@ -1853,7 +1877,13 @@ input:focus, select:focus, textarea:focus {
         padding-top: clamp(110px, 16vh, 150px);
         padding-bottom: clamp(110px, 15vh, 160px);
     }
-    .hero-car-wrapper { max-width: 560px; }
+    .hero-container {
+        gap: 32px;
+    }
+    .hero-lottie-wrapper dotlottie-wc {
+        width: 240px !important;
+        height: 240px !important;
+    }
     .car-badge { font-size: 0.7rem; padding: 6px 12px; }
     .hero-trust-metrics { gap: 14px; padding: 13px 18px; }
     .metric-icon { font-size: 19px; }
@@ -1862,15 +1892,36 @@ input:focus, select:focus, textarea:focus {
     .metric-divider { height: 28px; }
 }
 
-/* --- Mobile: 576px–768px --- */
+/* --- Mobile: ≤768px — column layout, lottie between heading and subtitle --- */
 @media (max-width: 768px) {
     .award-hero-section {
         padding-top: clamp(95px, 14vh, 120px);
         padding-bottom: clamp(100px, 13vh, 140px);
     }
-    .hero-container { gap: 24px; margin-top: 16px; }
-    .hero-car-wrapper { max-width: 420px; }
-    .car-badge { display: none; }
+    /* Switch to column, centered */
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        text-align: center;
+        margin-top: 16px;
+    }
+    /* Text content: center aligned on mobile */
+    .hero-content {
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+    }
+    .award-hero-section .hero-subtitle {
+        text-align: center;
+    }
+    /* Hide desktop lottie, show mobile lottie */
+    .hero-lottie-wrapper { display: none !important; }
+    .hero-lottie-mobile { display: flex; justify-content: center; }
+    /* Buttons centered */
+    .hero-cta-group { justify-content: center; gap: 10px; }
+    .hero-cta-group .btn-lg { padding: 12px 22px; font-size: 0.88rem; }
+    /* Other tweaks */
     .award-hero-section .hero-title {
         font-size: clamp(1.5rem, 6.5vw, 2.2rem);
         margin-bottom: 12px;
@@ -1879,8 +1930,6 @@ input:focus, select:focus, textarea:focus {
         font-size: clamp(0.82rem, 3vw, 0.96rem);
         margin-bottom: 20px;
     }
-    .hero-cta-group { gap: 10px; }
-    .hero-cta-group .btn-lg { padding: 12px 22px; font-size: 0.88rem; }
     .hero-trust-metrics { gap: 10px; padding: 10px 14px; }
     .metric { gap: 7px; }
     .metric-icon { font-size: 16px; }
@@ -1896,8 +1945,11 @@ input:focus, select:focus, textarea:focus {
         padding-top: 88px;
         padding-bottom: 110px;
     }
-    .hero-container { gap: 18px; margin-top: 12px; }
-    .hero-car-wrapper { max-width: 320px; }
+    .hero-container { gap: 0; margin-top: 12px; }
+    .hero-lottie-mobile dotlottie-wc {
+        max-width: 240px !important;
+        height: 240px !important;
+    }
     .award-hero-section .hero-title {
         font-size: clamp(1.35rem, 7.5vw, 1.8rem);
         line-height: 1.2;
