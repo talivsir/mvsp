@@ -550,4 +550,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    /* --- 17. Sports Car Hero Color Picker Interactivity --- */
+    const swatches = document.querySelectorAll('.sc-hero__swatch');
+    const heroCar = document.getElementById('heroCar');
+    const heroCarReflect = document.getElementById('heroCarReflect');
+
+    if (swatches.length > 0 && heroCar) {
+        swatches.forEach(swatch => {
+            swatch.addEventListener('click', () => {
+                // Remove active class from all swatches
+                swatches.forEach(s => {
+                    s.classList.remove('sc-hero__swatch--active');
+                    s.setAttribute('aria-checked', 'false');
+                });
+
+                // Add active class to clicked swatch
+                swatch.classList.add('sc-hero__swatch--active');
+                swatch.setAttribute('aria-checked', 'true');
+
+                // Determine CSS filter based on clicked swatch details
+                const hue = swatch.getAttribute('data-hue') || '0';
+                const sat = swatch.getAttribute('data-sat');
+                const dark = swatch.getAttribute('data-dark');
+                const color = swatch.getAttribute('data-color');
+
+                let filterStyle = 'none';
+
+                if (color === '#E01A22') {
+                    // Red (Default)
+                    filterStyle = 'none';
+                } else if (color === '#E7B4B4') {
+                    // Rose/pink - rotate hue slightly, desaturate, increase brightness
+                    filterStyle = 'hue-rotate(-20deg) saturate(0.5) brightness(1.35)';
+                } else if (color === '#D9D9D9') {
+                    // Light Gray - desaturate completely, high brightness
+                    filterStyle = 'saturate(0) brightness(1.5)';
+                } else if (color === '#6b6b6b') {
+                    // Medium Gray - desaturate completely, medium brightness
+                    filterStyle = 'saturate(0) brightness(0.85)';
+                } else if (color === '#1a1a1a') {
+                    // Black - desaturate completely, very low brightness, high contrast
+                    filterStyle = 'saturate(0) brightness(0.2) contrast(1.2)';
+                }
+
+                // Apply filter to car and reflection
+                heroCar.style.filter = filterStyle;
+                if (heroCarReflect) {
+                    heroCarReflect.style.filter = `${filterStyle} scaleY(-1)`;
+                }
+            });
+        });
+    }
+
 });

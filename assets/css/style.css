@@ -1498,436 +1498,346 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================
-   Award-Winning Hero Section — Full Responsive
+   Sports Car Hero — Complete Replacement
+   (Old award-hero-section CSS removed here)
    ========================================= */
 
-.award-hero-section {
-    position: relative;
+/* ── Design Tokens ──────────────────────── */
+:root {
+    --sc-red:    #E01A22;
+    --sc-red-dk: #b8141a;
+    --sc-ink:    #1a1a1a;
+    --sc-muted:  #6e6e6e;
+    --sc-bg:     #f7f7f7;
+    --sc-border: #e2e2e2;
+    --sc-font-display: 'Anton', 'Arial Black', sans-serif;
+    --sc-font-body:    'Poppins', 'Inter', sans-serif;
+}
+
+/* ── Section wrapper ────────────────────── */
+.sc-hero {
     width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-start;
+    padding: 100px 0 40px;          /* top pad = clear the fixed nav */
+    background: transparent;
+    font-family: var(--sc-font-body);
+}
+
+/* ── Card ───────────────────────────────── */
+.sc-hero__card {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 56px;
+    border-radius: 16px;
+    border: 1px solid var(--sc-border);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+    background: radial-gradient(ellipse at 60% 40%, #f7f7f7 0%, #e6e6e6 100%);
     overflow: hidden;
-    padding: clamp(90px, 13vh, 130px) 0 clamp(100px, 14vh, 160px);
-}
-
-/* Video Background */
-.hero-video-wrapper {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -3;
-    overflow: hidden;
-    background: var(--color-dark);
-}
-.hero-video {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    opacity: 0.5;
-}
-
-/* Gradient Overlay */
-.hero-gradient-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -2;
-    background: radial-gradient(circle at center, rgba(30, 45, 90, 0.85) 0%, rgba(5, 10, 20, 0.98) 100%);
-}
-
-/* Particles */
-.hero-particles {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* Parallax Shapes */
-.hero-shapes .shape {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    z-index: -1;
-    opacity: 0.3;
-    transition: transform 0.1s linear;
-}
-.hero-shapes .shape-1 { width: 400px; height: 400px; background: var(--color-accent); top: -100px; right: -100px; }
-.hero-shapes .shape-2 { width: 600px; height: 600px; background: var(--color-primary); bottom: -200px; left: -200px; }
-.hero-shapes .shape-3 { width: 300px; height: 300px; background: var(--color-success); top: 40%; left: 50%; }
-
-/* ---- LAYOUT: Two-column row on desktop, column on mobile ---- */
-.hero-container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: 48px 48px;
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    margin-top: clamp(20px, 4vh, 60px);
+    gap: 32px;
 }
 
-/* ---- TEXT CONTENT (left column) ---- */
-.hero-content {
-    color: #fff;
-    flex: 1 1 0;
-    min-width: 0;
-    max-width: 640px;
-    text-align: left;
+/* ── Red right-triangle bottom-left ─────── */
+.sc-hero__triangle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 72px 72px 0 0;
+    border-color: transparent var(--sc-red) transparent transparent;
+    transform: rotate(180deg);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ── Wave SVG ───────────────────────────── */
+.sc-hero__wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 55%;
+    height: 55%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Two-column grid ────────────────────── */
+.sc-hero__left {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 42%;
+    max-width: 42%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
 }
 
-/* Hero Title — shorter & fluid */
-.award-hero-section .hero-title {
-    font-size: clamp(1.7rem, 4vw, 3.2rem);
-    letter-spacing: -0.5px;
-    margin-bottom: 16px;
-    color: #fff;
-    line-height: 1.18;
-    max-width: 620px;
-}
-
-/* Gold gradient text */
-.text-gradient-gold {
-    background: linear-gradient(135deg, #FFD700, #FDB931);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Subtitle */
-.award-hero-section .hero-subtitle {
-    font-size: clamp(0.85rem, 1.6vw, 1.05rem);
-    color: rgba(255, 255, 255, 0.75);
-    margin-bottom: 28px;
-    max-width: 500px;
-    line-height: 1.6;
-    text-align: left;
-}
-
-/* ---- LOTTIE WRAPPERS ---- */
-/* Desktop right column */
-.hero-lottie-wrapper {
-    flex: 0 0 auto;
+.sc-hero__right {
+    position: relative;
+    z-index: 2;
+    flex: 1 1 0;
+    min-width: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* subtle glow behind the animation */
-    filter: drop-shadow(0 0 40px rgba(42, 167, 255, 0.25));
+    gap: 20px;
 }
 
-/* Mobile version (hidden on desktop) */
-.hero-lottie-mobile {
-    display: none;
-    width: 100%;
+/* ── LEFT: Eyebrow ──────────────────────── */
+.sc-hero__eyebrow {
+    font-family: var(--sc-font-body);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--sc-ink);
+    margin: 0 0 14px;
 }
 
-/* ---- BUTTONS ---- */
-.hero-cta-group {
+/* ── LEFT: Headline ─────────────────────── */
+.sc-hero__headline {
+    font-family: var(--sc-font-display);
+    font-size: clamp(44px, 6vw, 72px);
+    line-height: 0.92;
+    color: var(--sc-red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 20px;
+}
+
+/* ── LEFT: Sub-heading ──────────────────── */
+.sc-hero__subheading {
+    font-family: var(--sc-font-body);
+    font-size: clamp(16px, 2vw, 21px);
+    font-weight: 700;
+    color: var(--sc-ink);
+    margin: 0 0 12px;
+}
+
+/* ── LEFT: Body paragraph ───────────────── */
+.sc-hero__body {
+    font-family: var(--sc-font-body);
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--sc-muted);
+    max-width: 360px;
+    margin: 0 0 32px;
+}
+
+/* ── LEFT: CTA buttons ──────────────────── */
+.sc-hero__cta-row {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
-    margin-bottom: 0;
-    justify-content: flex-start;
-}
-.btn-glow { box-shadow: 0 0 20px rgba(42, 167, 255, 0.4); }
-.btn-glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-}
-.btn-glass:hover { background: rgba(255, 255, 255, 0.2); }
-
-/* ---- TRUST METRICS — full-width row below the two columns ---- */
-.hero-trust-metrics-wrapper {
-    width: 100%;
-    flex-basis: 100%;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 20px;
-}
-.hero-trust-metrics {
-    display: flex;
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 20px;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    padding: 16px 28px;
-    border-radius: var(--radius-md);
-    width: fit-content;
-    max-width: 100%;
 }
-.metric { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.metric-icon { font-size: 22px; }
-.metric-text { display: flex; flex-direction: column; }
-.metric-text strong { font-size: 1rem; color: #fff; font-family: var(--font-heading); line-height: 1.2; }
-.metric-text span { font-size: 0.72rem; color: rgba(255, 255, 255, 0.6); white-space: nowrap; }
-.metric-divider { width: 1px; height: 36px; background: rgba(255, 255, 255, 0.14); flex-shrink: 0; }
 
-/* ---- CAR WRAPPER ---- */
-.hero-car-wrapper {
-    width: 100%;
-    max-width: 800px;
-    display: flex;
+.sc-hero__btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-}
-.hero-car-scene {
-    position: relative;
-    width: 100%;
-    perspective: 1200px;
-    transform-style: preserve-3d;
-}
-.car-svg {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 24px 48px rgba(10,40,100,0.65)) drop-shadow(0 0 30px rgba(42,167,255,0.12));
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform;
-}
-.hero-car-scene:hover .car-svg {
-    filter: drop-shadow(0 30px 60px rgba(10,40,100,0.75)) drop-shadow(0 0 50px rgba(42,167,255,0.22));
-}
-
-/* Wheel spin handled by SVG animateTransform inside hero.php */
-.car-glow {
-    position: absolute;
-    bottom: 8%;
-    left: 15%;
-    width: 70%;
-    height: 30px;
-    background: radial-gradient(ellipse, rgba(42,167,255,0.4) 0%, transparent 70%);
-    filter: blur(12px);
-    border-radius: 50%;
-    animation: carGlowPulse 3s ease-in-out infinite;
-}
-@keyframes carGlowPulse {
-    0%, 100% { opacity: 0.5; transform: scaleX(1); }
-    50% { opacity: 0.9; transform: scaleX(1.08); }
-}
-
-/* Floating badges on the car */
-.car-badge {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 30px;
-    padding: 8px 16px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #fff;
+    font-family: var(--sc-font-body);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 36px;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.22s ease, color 0.22s ease,
+                border-color 0.22s ease, transform 0.18s ease,
+                box-shadow 0.22s ease;
     white-space: nowrap;
-    animation: badgeFloat 4s ease-in-out infinite;
-}
-.car-badge-1 {
-    top: 5%;
-    right: 5%;
-    animation-delay: 0s;
-}
-.car-badge-2 {
-    top: 2%;
-    left: 8%;
-    animation-delay: 1.5s;
-}
-.badge-icon { font-size: 1rem; }
-@keyframes badgeFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
+    letter-spacing: 0.3px;
 }
 
-/* ---- SCROLL INDICATOR ---- */
-.hero-scroll-indicator {
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
+/* Primary — solid red */
+.sc-hero__btn--primary {
+    background: var(--sc-red);
+    color: #fff;
+    border-color: var(--sc-red);
+    box-shadow: 0 4px 18px rgba(224,26,34,0.28);
+}
+.sc-hero__btn--primary:hover,
+.sc-hero__btn--primary:focus-visible {
+    background: var(--sc-red-dk);
+    border-color: var(--sc-red-dk);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(224,26,34,0.38);
+    color: #fff;
+}
+
+/* Outline — black border */
+.sc-hero__btn--outline {
+    background: transparent;
+    color: var(--sc-ink);
+    border-color: var(--sc-ink);
+}
+.sc-hero__btn--outline:hover,
+.sc-hero__btn--outline:focus-visible {
+    background: var(--sc-ink);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ── RIGHT: Car image + reflection ──────── */
+.sc-hero__car-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.6);
-    z-index: 10;
-}
-.scroll-text { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
-.mouse-icon {
-    width: 22px; height: 34px;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-radius: 11px;
-    position: relative;
-}
-.wheel {
-    width: 3px; height: 7px;
-    background: #fff;
-    border-radius: 2px;
-    position: absolute;
-    top: 5px; left: 50%;
-    transform: translateX(-50%);
-    animation: scrollWheel 2s infinite;
-}
-@keyframes scrollWheel {
-    0% { transform: translate(-50%, 0); opacity: 1; }
-    100% { transform: translate(-50%, 14px); opacity: 0; }
 }
 
-/* ---- WAVE ---- */
-.hero-wave-divider {
-    position: absolute;
-    bottom: -1px; left: 0;
+.sc-hero__car-img {
     width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    z-index: 10;
-    transform: rotate(180deg);
-}
-.hero-wave-divider svg {
-    position: relative;
+    height: auto;
     display: block;
-    width: calc(100% + 1.3px);
-    height: clamp(40px, 6vw, 70px);
+    object-fit: contain;
+    filter: drop-shadow(0 16px 40px rgba(0,0,0,0.15));
+    transition: filter 0.5s ease;
+    position: relative;
+    z-index: 2;
 }
-.hero-wave-divider .shape-fill { fill: var(--color-light-gray); }
 
-/* ---- ANIMATIONS ---- */
-.slide-up-anim {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+/* Mirror reflection container */
+.sc-hero__reflection {
+    width: 90%;
+    overflow: hidden;
+    position: relative;
+    margin-top: -10px;      /* overlap slightly under the car */
+    /* Fade from top (visible) to bottom (transparent) */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 70%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 70%);
 }
-@keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
-.slide-in-right {
-    opacity: 0;
-    transform: translateX(60px);
-    animation: slideInRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+/* Flipped reflection image */
+.sc-hero__car-img--reflect {
+    transform: scaleY(-1);
+    filter: none;
+    opacity: 0.6;
+    pointer-events: none;
 }
-@keyframes slideInRight { to { opacity: 1; transform: translateX(0); } }
 
-/* ============================================
-   RESPONSIVE BREAKPOINTS FOR HERO
-   ============================================ */
+/* ── Color picker ───────────────────────── */
+.sc-hero__picker {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
-/* --- Tablet: 768px–1024px --- */
+.sc-hero__picker-label {
+    font-family: var(--sc-font-body);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--sc-ink);
+    white-space: nowrap;
+}
+
+.sc-hero__swatches {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sc-hero__swatch {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    transition: box-shadow 0.2s ease, transform 0.18s ease, border-color 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.sc-hero__swatch:hover {
+    transform: scale(1.18);
+}
+/* Active ring */
+.sc-hero__swatch--active {
+    border-color: var(--sc-ink);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--sc-ink);
+}
+
+/* ── Responsive ─────────────────────────── */
+/* Tablet: tighten layout */
 @media (max-width: 1024px) {
-    .award-hero-section {
-        padding-top: clamp(110px, 16vh, 150px);
-        padding-bottom: clamp(110px, 15vh, 160px);
+    .sc-hero__card {
+        padding: 40px 36px;
+        gap: 24px;
     }
-    .hero-container {
-        gap: 32px;
+    .sc-hero__left {
+        flex: 0 0 46%;
+        max-width: 46%;
     }
-    .hero-lottie-wrapper dotlottie-wc {
-        width: 360px !important;
-        height: 360px !important;
-    }
-    .car-badge { font-size: 0.7rem; padding: 6px 12px; }
-    .hero-trust-metrics { gap: 14px; padding: 13px 18px; }
-    .metric-icon { font-size: 19px; }
-    .metric-text strong { font-size: 0.92rem; }
-    .metric-text span { font-size: 0.67rem; }
-    .metric-divider { height: 28px; }
 }
 
-/* --- Mobile: ≤768px — column layout, lottie between heading and subtitle --- */
+/* Mobile: single column, car on top */
 @media (max-width: 768px) {
-    .award-hero-section {
-        padding-top: clamp(95px, 14vh, 120px);
-        padding-bottom: clamp(100px, 13vh, 140px);
+    .sc-hero {
+        padding: 88px 16px 32px;
     }
-    /* Switch to column, centered */
-    .hero-container {
+    .sc-hero__card {
         flex-direction: column;
-        align-items: center;
+        padding: 36px 24px 48px;
         gap: 0;
-        text-align: center;
-        margin-top: 16px;
+        border-radius: 14px;
     }
-    /* Text content: center aligned on mobile */
-    .hero-content {
+    .sc-hero__left {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
         align-items: center;
         text-align: center;
+        order: 2;
+    }
+    .sc-hero__right {
+        order: 1;
+        width: 100%;
+        gap: 12px;
+    }
+    .sc-hero__headline {
+        font-size: clamp(36px, 10vw, 48px);
+    }
+    .sc-hero__body {
         max-width: 100%;
     }
-    .award-hero-section .hero-subtitle {
-        text-align: center;
+    .sc-hero__cta-row {
+        justify-content: center;
     }
-    /* Hide desktop lottie, show mobile lottie */
-    .hero-lottie-wrapper { display: none !important; }
-    .hero-lottie-mobile { display: flex; justify-content: center; }
-    /* Buttons centered */
-    .hero-cta-group { justify-content: center; gap: 10px; }
-    .hero-cta-group .btn-lg { padding: 12px 22px; font-size: 0.88rem; }
-    /* Other tweaks */
-    .award-hero-section .hero-title {
-        font-size: clamp(1.5rem, 6.5vw, 2.2rem);
-        margin-bottom: 12px;
+    .sc-hero__car-wrap {
+        max-width: 340px;
     }
-    .award-hero-section .hero-subtitle {
-        font-size: clamp(0.82rem, 3vw, 0.96rem);
-        margin-bottom: 20px;
-    }
-    .hero-trust-metrics { gap: 10px; padding: 10px 14px; }
-    .metric { gap: 7px; }
-    .metric-icon { font-size: 16px; }
-    .metric-text strong { font-size: 0.8rem; }
-    .metric-text span { font-size: 0.6rem; }
-    .metric-divider { height: 22px; }
-    .hero-scroll-indicator { bottom: 55px; }
 }
 
-/* --- Small Mobile: < 576px --- */
-@media (max-width: 576px) {
-    .award-hero-section {
-        padding-top: 88px;
-        padding-bottom: 110px;
+@media (max-width: 480px) {
+    .sc-hero__card {
+        padding: 28px 16px 40px;
     }
-    .hero-container { gap: 0; margin-top: 12px; }
-    .hero-lottie-mobile dotlottie-wc {
-        max-width: 300px !important;
-        height: 300px !important;
+    .sc-hero__btn {
+        padding: 12px 28px;
+        font-size: 14px;
     }
-    .award-hero-section .hero-title {
-        font-size: clamp(1.35rem, 7.5vw, 1.8rem);
-        line-height: 1.2;
-    }
-    .award-hero-section .hero-subtitle {
-        font-size: 0.83rem;
-        max-width: 100%;
-    }
-    .hero-cta-group {
+    .sc-hero__cta-row {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
         width: 100%;
     }
-    .hero-cta-group .btn {
+    .sc-hero__btn {
         width: 100%;
         justify-content: center;
     }
-    .hero-trust-metrics {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    .metric-divider { width: 100%; height: 1px; }
-    .hero-scroll-indicator { display: none; }
 }
+
+
 
 
 /* =========================================

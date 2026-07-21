@@ -1,115 +1,130 @@
-<!-- Lottie Web Component -->
-<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
+<?php /* ============================================================
+   HERO SECTION — Complete replacement (old award-hero removed)
+   ============================================================ */ ?>
 
-<section class="award-hero-section" id="hero">
-    
-    <!-- Video Background -->
-    <div class="hero-video-wrapper">
-        <video autoplay loop muted playsinline class="hero-video">
-            <source src="https://cdn.coverr.co/videos/coverr-driving-a-luxury-car-2713/1080p.mp4" type="video/mp4">
-        </video>
-    </div>
+<!-- Google Fonts: Anton (display headline) + Poppins (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Animated Gradient Overlay -->
-    <div class="hero-gradient-overlay"></div>
+<section class="sc-hero" id="hero" aria-label="Hero — Exclusive Sports Car">
 
-    <!-- Animated Light Particles Canvas -->
-    <canvas id="hero-particles" class="hero-particles"></canvas>
+    <div class="sc-hero__card">
 
-    <!-- Parallax Shapes -->
-    <div class="hero-shapes">
-        <div class="shape shape-1 mouse-parallax" data-speed="2"></div>
-        <div class="shape shape-2 mouse-parallax" data-speed="-1.5"></div>
-        <div class="shape shape-3 mouse-parallax" data-speed="1"></div>
-    </div>
+        <!-- Red triangle accent pinned bottom-left -->
+        <div class="sc-hero__triangle" aria-hidden="true"></div>
 
-    <div class="container hero-container">
+        <!-- Subtle wave shape (SVG) sweeping lower-left -->
+        <svg class="sc-hero__wave" viewBox="0 0 600 220" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,220 C80,160 160,80 280,110 C400,140 480,60 600,40 L600,220 Z" fill="rgba(0,0,0,0.03)"/>
+        </svg>
 
-        <!-- LEFT: Text Content -->
-        <div class="hero-content">
+        <!-- ── LEFT COLUMN ─────────────────────────────── -->
+        <div class="sc-hero__left">
 
-            <!-- Headline -->
-            <h1 class="hero-title slide-up-anim" style="animation-delay: 0.2s;">
-                Maui's #1 Vehicle Storage
-                <span class="text-gradient-gold type-text-wrapper"><span class="type-text" data-type="— Secure & Seamless."></span><span class="type-cursor"></span></span>
+            <p class="sc-hero__eyebrow">New in Stock</p>
+
+            <h1 class="sc-hero__headline">
+                Exclusive<br>Sports Car
             </h1>
 
-            <!-- Lottie Animation — shown BETWEEN heading & subtitle on mobile only -->
-            <div class="hero-lottie-mobile slide-up-anim" style="animation-delay: 0.35s;" aria-hidden="true">
-                <dotlottie-wc
-                    src="https://lottie.host/275d6049-993c-4af2-a805-ae3646f50fe9/orM6XtE4e9.json"
-                    autoplay loop
-                    style="width:100%;max-width:360px;height:360px;display:block;margin:0 auto;">
-                </dotlottie-wc>
-            </div>
+            <h2 class="sc-hero__subheading">Sports cars advanced features.</h2>
 
-            <!-- Subheadline -->
-            <p class="hero-subtitle slide-up-anim" style="animation-delay: 0.3s;">
-                Climate-controlled storage, airport delivery &amp; white-glove care for your vehicle in Kahului, Maui.
+            <p class="sc-hero__body">
+                Sports cars offer advanced features and high-quality
+                materials for a more comfortable driving experience.
             </p>
 
-            <!-- CTAs -->
-            <div class="hero-cta-group slide-up-anim" style="animation-delay: 0.4s;">
-                <a href="#book" class="btn btn-primary btn-lg btn-glow btn-animated">
-                    <span>Reserve Space</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-                <a href="services.php" class="btn btn-glass btn-lg btn-animated">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0-2a8 8 0 100-16 8 8 0 000 16z" fill="currentColor"/></svg>
-                    <span>Watch Video</span>
-                </a>
+            <div class="sc-hero__cta-row">
+                <a href="#book" class="sc-hero__btn sc-hero__btn--primary">Buy Now</a>
+                <a href="services.php" class="sc-hero__btn sc-hero__btn--outline">See more</a>
             </div>
 
-        </div>
+        </div><!-- /.sc-hero__left -->
 
-        <!-- RIGHT: Lottie Animation — desktop only -->
-        <div class="hero-lottie-wrapper slide-in-right" style="animation-delay: 0.3s;" aria-hidden="true">
-            <dotlottie-wc
-                src="https://lottie.host/275d6049-993c-4af2-a805-ae3646f50fe9/orM6XtE4e9.json"
-                autoplay loop
-                style="width:480px;height:480px;display:block;">
-            </dotlottie-wc>
-        </div>
+        <!-- ── RIGHT COLUMN ────────────────────────────── -->
+        <div class="sc-hero__right">
 
-        <!-- Trust Metrics — full width below car -->
-        <div class="hero-trust-metrics-wrapper slide-up-anim" style="animation-delay: 0.6s;">
-            <div class="hero-trust-metrics">
-                <div class="metric">
-                    <div class="metric-icon">🛡️</div>
-                    <div class="metric-text">
-                        <strong>24/7</strong>
-                        <span>Armed Security</span>
-                    </div>
-                </div>
-                <div class="metric-divider"></div>
-                <div class="metric">
-                    <div class="metric-icon">🌡️</div>
-                    <div class="metric-text">
-                        <strong>100%</strong>
-                        <span>Climate Controlled</span>
-                    </div>
-                </div>
-                <div class="metric-divider"></div>
-                <div class="metric">
-                    <div class="metric-icon">✈️</div>
-                    <div class="metric-text">
-                        <strong>OGG</strong>
-                        <span>Airport Drop-off</span>
-                    </div>
+            <!-- Car image + mirror reflection -->
+            <div class="sc-hero__car-wrap">
+                <img
+                    id="heroCar"
+                    src="assets/images/sports-car.png"
+                    alt="Exclusive red sports car"
+                    class="sc-hero__car-img"
+                    draggable="false"
+                >
+                <!-- Mirror reflection (CSS handles the flip + fade) -->
+                <div class="sc-hero__reflection" aria-hidden="true">
+                    <img
+                        src="assets/images/sports-car.png"
+                        alt=""
+                        class="sc-hero__car-img sc-hero__car-img--reflect"
+                        id="heroCarReflect"
+                        draggable="false"
+                    >
                 </div>
             </div>
-        </div>
 
-    </div><!-- /.hero-container -->
+            <!-- Color picker -->
+            <div class="sc-hero__picker">
+                <span class="sc-hero__picker-label">Choose Color:</span>
+                <div class="sc-hero__swatches" role="radiogroup" aria-label="Car color">
+                    <button
+                        class="sc-hero__swatch sc-hero__swatch--active"
+                        data-color="#E01A22"
+                        data-hue="0"
+                        style="background:#E01A22"
+                        aria-label="Red"
+                        aria-checked="true"
+                        role="radio"
+                    ></button>
+                    <button
+                        class="sc-hero__swatch"
+                        data-color="#E7B4B4"
+                        data-hue="340"
+                        style="background:#E7B4B4"
+                        aria-label="Rose"
+                        aria-checked="false"
+                        role="radio"
+                    ></button>
+                    <button
+                        class="sc-hero__swatch"
+                        data-color="#D9D9D9"
+                        data-hue="0"
+                        data-sat="0"
+                        style="background:#D9D9D9"
+                        aria-label="Light gray"
+                        aria-checked="false"
+                        role="radio"
+                    ></button>
+                    <button
+                        class="sc-hero__swatch"
+                        data-color="#6b6b6b"
+                        data-hue="0"
+                        data-sat="0"
+                        data-dark="1"
+                        style="background:#6b6b6b"
+                        aria-label="Medium gray"
+                        aria-checked="false"
+                        role="radio"
+                    ></button>
+                    <button
+                        class="sc-hero__swatch"
+                        data-color="#1a1a1a"
+                        data-hue="0"
+                        data-sat="0"
+                        data-dark="2"
+                        style="background:#1a1a1a"
+                        aria-label="Black"
+                        aria-checked="false"
+                        role="radio"
+                    ></button>
+                </div>
+            </div><!-- /.sc-hero__picker -->
 
-    <!-- Scroll Indicator -->
-    <div class="hero-scroll-indicator">
-        <span class="scroll-text">Scroll to explore</span>
-        <div class="mouse-icon">
-            <div class="wheel"></div>
-        </div>
-    </div>
+        </div><!-- /.sc-hero__right -->
 
-    <!-- Wave Divider Removed -->
+    </div><!-- /.sc-hero__card -->
 
-</section>
+</section><!-- /.sc-hero -->
