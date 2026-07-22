@@ -1,9 +1,8 @@
 <?php /* ============================================================
-   HERO SECTION — Luxury & Classic Car Storage (full redesign)
-   Old sports-car "Buy Now" hero fully removed and replaced.
+   HERO SECTION — Vehicle Storage in Central Maui
    ============================================================ */ ?>
 
-<section class="lux-hero" id="hero" aria-label="Hero — Luxury &amp; Classic Car Storage">
+<section class="lux-hero" id="hero" aria-label="Vehicle storage in Central Maui, minutes from Kahului Airport">
 
     <!-- Ambient background layers -->
     <div class="lux-hero__bg" aria-hidden="true">
@@ -19,18 +18,18 @@
 
             <span class="lux-hero__eyebrow">
                 <span class="lux-hero__eyebrow-dot"></span>
-                Kahului &middot; Maui
+                Family-Owned &middot; Central Maui
             </span>
 
             <h1 class="lux-hero__title">
-                A Sanctuary for Your
-                <span class="lux-hero__title-accent">Classic&nbsp;Car</span>
+                Your Vehicle&rsquo;s Home
+                <span class="lux-hero__title-accent">Away&nbsp;From&nbsp;Home</span>
             </h1>
 
             <p class="lux-hero__subtitle">
-                Climate-controlled, fully insured and monitored around the clock &mdash;
-                Maui&rsquo;s most trusted home for luxury and classic vehicles, with
-                showroom detailing and airport delivery on demand.
+                Aloha! We&rsquo;re a family-owned vehicle storage company just two minutes from
+                Kahului Airport (OGG). Secure indoor and outdoor storage for cars, trucks, boats,
+                and RVs &mdash; with airport delivery, curbside pickup, washing, and detailing.
             </p>
 
             <div class="lux-hero__actions">
@@ -45,18 +44,18 @@
                 </a>
             </div>
 
-            <ul class="lux-hero__trust" aria-label="Why owners trust us">
+            <ul class="lux-hero__trust" aria-label="Why owners choose us">
                 <li>
-                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    Insured &amp; Secured
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.8"/></svg>
+                    2 Minutes from OGG
                 </li>
                 <li>
-                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M6 6l1.5 1.5M16.5 16.5L18 18M6 18l1.5-1.5M16.5 7.5L18 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/></svg>
-                    Climate-Controlled
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="7" r="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M17 3.13A4 4 0 0 1 17 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    Family-Owned &amp; Local
                 </li>
                 <li>
-                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    24/7 Monitored
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Airport Delivery
                 </li>
             </ul>
 
@@ -70,7 +69,7 @@
             <div class="lux-hero__stage">
                 <img
                     src="assets/images/sports-car.png"
-                    alt="Luxury car in secure Maui storage"
+                    alt="Vehicle stored with Maui Vehicle Storage near Kahului Airport (OGG)"
                     class="lux-hero__car"
                     draggable="false"
                     fetchpriority="high"
@@ -79,7 +78,7 @@
                 <!-- Floating glass stat card -->
                 <div class="lux-hero__stat">
                     <span class="lux-hero__stat-num">500<span>+</span></span>
-                    <span class="lux-hero__stat-label">Vehicles kept<br>in pristine condition</span>
+                    <span class="lux-hero__stat-label">Vehicles safely<br>stored on Maui</span>
                 </div>
             </div>
         </div><!-- /.lux-hero__visual -->

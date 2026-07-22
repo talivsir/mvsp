@@ -22,8 +22,8 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/><path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"/></svg>
                 </div>
                 <h3>Office Information</h3>
-                <p>123 Main Street<br>Kahului, HI 96732</p>
-                <a href="mailto:info@mauivehiclestorage.com">info@mauivehiclestorage.com</a>
+                <p>Central Maui<br>Near Kahului Airport (OGG)</p>
+                <a href="mailto:mauivehiclestorage@gmail.com">mauivehiclestorage@gmail.com</a>
             </div>
 
             <!-- Card 2: Business Hours -->
@@ -44,7 +44,7 @@
                 </div>
                 <h3>24/7 Support</h3>
                 <p>For immediate assistance or security concerns, contact our 24/7 dispatch.</p>
-                <a href="tel:+18085550198" class="emergency-number">(808) 555-0198</a>
+                <a href="tel:+18085759008" class="emergency-number">(808) 575-9008</a>
             </div>
         </div>
 

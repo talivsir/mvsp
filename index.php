@@ -1,6 +1,6 @@
 <?php
-$pageTitle = 'Home';
-$metaDescription = 'Kahului\'s premier luxury vehicle storage. Offering secure indoor/outdoor storage, professional detailing, and seamless airport pickups in Maui.';
+$pageTitle = 'Vehicle Storage Near Kahului Airport (OGG)';
+$metaDescription = 'Family-owned vehicle storage in Central Maui, about 2 minutes from Kahului Airport (OGG). Secure indoor & outdoor storage for cars, trucks, boats & RVs, with airport delivery, curbside pickup, washing & detailing.';
 $canonicalUrl = '/index.php';
 
 include __DIR__ . '/includes/header.php';

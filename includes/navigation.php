@@ -31,14 +31,14 @@ $is_mobile_menu = isset($is_mobile) && $is_mobile;
                         <ul>
                             <li>
                                 <a href="storage.php">
-                                    <span class="mega-link-title">Indoor Climate-Controlled</span>
-                                    <span class="mega-link-desc">Premium protection for luxury & classic cars.</span>
+                                    <span class="mega-link-title">Covered Indoor Storage</span>
+                                    <span class="mega-link-desc">Keeps your vehicle out of the sun, salt air, and rain.</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="storage.php">
                                     <span class="mega-link-title">Outdoor & Fleet</span>
-                                    <span class="mega-link-desc">Secure fenced area with 24/7 monitoring.</span>
+                                    <span class="mega-link-desc">Affordable, fenced space for cars, trucks, boats & RVs.</span>
                                 </a>
                             </li>
                         </ul>
@@ -49,7 +49,7 @@ $is_mobile_menu = isset($is_mobile) && $is_mobile;
                             <li>
                                 <a href="services.php#detailing">
                                     <span class="mega-link-title">Wash & Detailing</span>
-                                    <span class="mega-link-desc">Showroom quality hand wash and ceramic.</span>
+                                    <span class="mega-link-desc">Hand wash and full detailing to keep it clean.</span>
                                 </a>
                             </li>
                             <li>

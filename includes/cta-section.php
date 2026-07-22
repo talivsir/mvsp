@@ -20,7 +20,7 @@
                 <h2 class="cta-section-title">Ready to secure <br><span class="text-gradient-gold">your vehicle?</span></h2>
 
                 <p class="cta-section-sub">
-                    Join Kahului's most exclusive vehicle sanctuary. Reserve your spot for premium indoor or outdoor storage — seamless airport delivery included.
+                    Reserve your spot for indoor or outdoor vehicle storage in Central Maui — family-owned, just two minutes from Kahului Airport, with airport delivery on request.
                 </p>
 
                 <!-- Google Reviews -->
@@ -41,7 +41,7 @@
                     </li>
                     <li>
                         <svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        <span>24/7 armed security & HD surveillance</span>
+                        <span>Fully fenced &amp; gated, family-owned lot</span>
                     </li>
                     <li>
                         <svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>

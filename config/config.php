@@ -6,25 +6,35 @@
 // Site Defaults
 define('SITE_NAME', 'Maui Vehicle Storage');
 define('BASE_URL', 'https://mauivehiclestorage.com'); // Replace with actual domain
-define('DEFAULT_DESC', 'Premium vehicle storage, detailing, and delivery services in Kahului, Maui. Indoor, outdoor, and fleet storage available.');
+define('DEFAULT_DESC', 'Family-owned vehicle storage in Central Maui, about two minutes from Kahului Airport (OGG). Secure indoor & outdoor storage for cars, trucks, boats & RVs, plus airport delivery, curbside pickup, washing, and detailing.');
 define('DEFAULT_IMG', BASE_URL . '/assets/images/og-image.jpg');
+
+// Business contact constants (single source of truth)
+define('BIZ_PHONE', '+18085759008');
+define('BIZ_PHONE_DISPLAY', '(808) 575-9008');
+define('BIZ_EMAIL', 'mauivehiclestorage@gmail.com');
 
 // Local Business Schema Data
 $business_schema = [
     "@context" => "https://schema.org",
-    "@type" => "AutoStorage",
+    "@type" => "LocalBusiness",
     "name" => SITE_NAME,
+    "description" => "Family-owned and operated vehicle storage in Central Maui, about two minutes from Kahului Airport. Secure indoor and outdoor storage for cars, trucks, boats, and RVs, plus airport delivery, curbside pickup, car washing, and detailing.",
     "image" => DEFAULT_IMG,
     "@id" => BASE_URL,
     "url" => BASE_URL,
-    "telephone" => "+18085550198",
+    "telephone" => BIZ_PHONE,
+    "email" => BIZ_EMAIL,
     "address" => [
         "@type" => "PostalAddress",
-        "streetAddress" => "123 Main Street",
         "addressLocality" => "Kahului",
         "addressRegion" => "HI",
         "postalCode" => "96732",
         "addressCountry" => "US"
+    ],
+    "areaServed" => [
+        "@type" => "AdministrativeArea",
+        "name" => "Maui, Hawaii"
     ],
     "geo" => [
         "@type" => "GeoCoordinates",
@@ -32,12 +42,17 @@ $business_schema = [
         "longitude" => -156.4729
     ],
     "openingHoursSpecification" => [
-        "@type" => "OpeningHoursSpecification",
-        "dayOfWeek" => [
-            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
+        [
+            "@type" => "OpeningHoursSpecification",
+            "dayOfWeek" => ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens" => "08:00",
+            "closes" => "16:00"
         ],
-        "opens" => "08:00",
-        "closes" => "17:00"
+        [
+            "@type" => "OpeningHoursSpecification",
+            "dayOfWeek" => "Saturday",
+            "description" => "By appointment — call for service"
+        ]
     ],
     "priceRange" => "$$"
 ];

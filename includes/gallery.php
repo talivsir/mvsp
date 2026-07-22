@@ -2,28 +2,28 @@
     <div class="container">
         
         <div class="section-header text-center" data-scroll-reveal>
-            <h2 class="section-title">The Collection</h2>
-            <p class="section-subtitle">A glimpse into our pristine facility and the caliber of vehicles we care for.</p>
+            <h2 class="section-title">Around the Lot</h2>
+            <p class="section-subtitle">A look at the everyday vehicles we store and care for here on Maui.</p>
         </div>
 
         <!-- Filter Controls -->
         <div class="gallery-filters text-center" data-scroll-reveal>
             <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="exotic">Exotics</button>
+            <button class="filter-btn" data-filter="vehicles">Vehicles</button>
             <button class="filter-btn" data-filter="storage">Storage</button>
             <button class="filter-btn" data-filter="detailing">Detailing</button>
         </div>
 
         <!-- Masonry Grid -->
         <div class="gallery-masonry" data-scroll-reveal>
-            <!-- Item 1: Exotic (Landscape) -->
-            <div class="gallery-item" data-category="exotic">
+            <!-- Item 1: Vehicle (Landscape) -->
+            <div class="gallery-item" data-category="vehicles">
                 <div class="gallery-img-wrapper" data-full="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=1600">
-                    <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=800" alt="Porsche 911 GT3" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=800" alt="Vehicle stored on Maui near Kahului Airport" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-caption">
-                            <h4>Porsche 911 GT3</h4>
-                            <p>Exotic Collection</p>
+                            <h4>Stored &amp; Ready</h4>
+                            <p>Stored on Maui</p>
                         </div>
                         <div class="zoom-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
@@ -35,11 +35,11 @@
             <!-- Item 2: Storage (Portrait) -->
             <div class="gallery-item" data-category="storage">
                 <div class="gallery-img-wrapper" data-full="https://images.unsplash.com/photo-1604085448661-d7790b4372bd?auto=format&fit=crop&q=80&w=1600">
-                    <img src="https://images.unsplash.com/photo-1604085448661-d7790b4372bd?auto=format&fit=crop&q=80&w=600" alt="Premium Garage" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1604085448661-d7790b4372bd?auto=format&fit=crop&q=80&w=600" alt="Covered vehicle storage on Maui" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-caption">
-                            <h4>Climate Controlled</h4>
-                            <p>Premium Storage</p>
+                            <h4>Covered Storage</h4>
+                            <p>On Our Maui Lot</p>
                         </div>
                         <div class="zoom-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
@@ -64,14 +64,14 @@
                 </div>
             </div>
 
-            <!-- Item 4: Exotic (Portrait) -->
-            <div class="gallery-item" data-category="exotic">
+            <!-- Item 4: Vehicle (Portrait) -->
+            <div class="gallery-item" data-category="vehicles">
                 <div class="gallery-img-wrapper" data-full="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=1600">
-                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=600" alt="Ferrari" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=600" alt="Vehicle stored on Maui" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-caption">
-                            <h4>Ferrari 488</h4>
-                            <p>Exotic Collection</p>
+                            <h4>Everyday Rides</h4>
+                            <p>Stored on Maui</p>
                         </div>
                         <div class="zoom-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
@@ -96,14 +96,14 @@
                 </div>
             </div>
 
-            <!-- Item 6: Exotic (Portrait) -->
-            <div class="gallery-item" data-category="exotic">
+            <!-- Item 6: Vehicle (Portrait) -->
+            <div class="gallery-item" data-category="vehicles">
                 <div class="gallery-img-wrapper" data-full="https://images.unsplash.com/photo-1503376712341-ea4025d2fc75?auto=format&fit=crop&q=80&w=1600">
-                    <img src="https://images.unsplash.com/photo-1503376712341-ea4025d2fc75?auto=format&fit=crop&q=80&w=600" alt="Luxury Interior" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1503376712341-ea4025d2fc75?auto=format&fit=crop&q=80&w=600" alt="Interior detailing service" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-caption">
-                            <h4>White-glove Care</h4>
-                            <p>Luxury Interiors</p>
+                            <h4>Fresh &amp; Clean</h4>
+                            <p>Interior Detailing</p>
                         </div>
                         <div class="zoom-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>

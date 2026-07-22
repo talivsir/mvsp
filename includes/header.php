@@ -71,7 +71,7 @@
                         <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
-                <a href="tel:+18085550198" class="action-icon-btn phone-btn" aria-label="Call Us">
+                <a href="tel:<?php echo BIZ_PHONE; ?>" class="action-icon-btn phone-btn" aria-label="Call Us">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22 16.92V20.92C22.0032 21.1986 21.9022 21.4673 21.7163 21.6749C21.5303 21.8824 21.2721 22.0142 20.99 22.05C16.8927 21.597 13.011 20.1557 9.63001 17.83C6.48312 15.6888 3.86435 12.9189 2.01001 9.69998C1.55404 6.27376 1.83478 2.85327 2.83001 2.98998C3.12351 2.70932 3.48625 2.5312 3.86797 2.47957C4.24968 2.42795 4.63478 2.50493 4.97001 2.69998L8.60001 4.54998C8.88725 4.69345 9.12458 4.90847 9.28929 5.17415C9.454 5.43983 9.54044 5.74716 9.54001 6.05998V9.38998C9.54001 9.65824 9.65427 9.91485 9.85501 10.09C10.8841 11.2333 12.0465 12.2472 13.31 13.11C13.504 13.2505 13.7383 13.3155 13.97 13.3C14.28 13.3 14.58 13.19 14.82 12.99L17.52 10.99C17.7818 10.7963 18.0935 10.6865 18.4173 10.6744C18.7412 10.6622 19.0628 10.7482 19.34 10.92L23.01 13.32C23.2721 13.4912 23.4791 13.7229 23.6069 13.9877C23.7346 14.2524 23.7781 14.5406 23.73 14.82L22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -98,8 +98,8 @@
                 <div class="mobile-menu-footer">
                     <a href="contact.php" class="btn btn-primary btn-full btn-animated"><span>Book Now</span></a>
                     <div class="mobile-contact-info mt-4">
-                        <p><a href="tel:+18085550198">(808) 555-0198</a></p>
-                        <p><a href="mailto:info@mauivehiclestorage.com">info@mauivehiclestorage.com</a></p>
+                        <p><a href="tel:<?php echo BIZ_PHONE; ?>"><?php echo BIZ_PHONE_DISPLAY; ?></a></p>
+                        <p><a href="mailto:<?php echo BIZ_EMAIL; ?>"><?php echo BIZ_EMAIL; ?></a></p>
                     </div>
                 </div>
             </div>

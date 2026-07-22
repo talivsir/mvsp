@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'DMV Driving Test Vehicle Rental | Maui Vehicle Storage';
+$pageTitle = 'DMV Driving Test Vehicle Rental';
 $metaDescription = 'Rent a fully compliant, insured vehicle for your Maui DMV road test. We provide a stress-free experience with reliable and well-maintained cars ready for your exam.';
 $canonicalUrl = '/dmv-rental.php';
 

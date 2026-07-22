@@ -1,6 +1,6 @@
 <?php
-$pageTitle = 'All Services';
-$metaDescription = 'Explore all premium services offered by Maui Vehicle Storage, including car wash, detailing, airport pickup, and pier delivery.';
+$pageTitle = 'Vehicle Storage & Services';
+$metaDescription = 'Services from Maui Vehicle Storage: covered indoor & affordable outdoor vehicle storage, airport delivery, curbside pickup, car washing, and detailing — family-owned in Central Maui near Kahului Airport (OGG).';
 $canonicalUrl = '/services.php';
 
 include __DIR__ . '/includes/header.php';
@@ -37,14 +37,38 @@ include __DIR__ . '/includes/header.php';
 
             <div class="svc-grid">
 
+                <div class="svc-card" data-scroll-reveal>
+                    <div class="svc-card__media">
+                        <img src="https://images.unsplash.com/photo-1604085448661-d7790b4372bd?auto=format&fit=crop&q=80&w=700" alt="Covered indoor vehicle storage" loading="lazy">
+                        <span class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                    </div>
+                    <div class="svc-card__body">
+                        <h3>Covered Indoor Storage</h3>
+                        <p>Keeps your vehicle out of the sun, salt air, and rain — ideal for longer stays away from the island.</p>
+                        <a href="storage.php" class="svc-card__link">See storage <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    </div>
+                </div>
+
+                <div class="svc-card" data-scroll-reveal>
+                    <div class="svc-card__media">
+                        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=700" alt="Outdoor and fleet vehicle storage" loading="lazy">
+                        <span class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M3 11h18" stroke-linecap="round"/></svg></span>
+                    </div>
+                    <div class="svc-card__body">
+                        <h3>Outdoor &amp; Fleet Storage</h3>
+                        <p>An affordable, fully fenced option with room for cars, trucks, boats, RVs, and commercial fleets.</p>
+                        <a href="storage.php" class="svc-card__link">See storage <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    </div>
+                </div>
+
                 <div class="svc-card svc-card--wide" data-scroll-reveal>
                     <div class="svc-card__media">
-                        <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=900" alt="Complete detailing" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=900" alt="Complete car detailing service" loading="lazy">
                         <span class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="svc-card__body">
-                        <h3>Complete Detailing</h3>
-                        <p>Interior deep-cleaning, exterior polish, and ceramic coating. Your vehicle returns feeling showroom-new.</p>
+                        <h3>Washing &amp; Detailing</h3>
+                        <p>Optional interior and exterior cleaning so your vehicle is fresh and ready to drive the moment you return.</p>
                         <a href="contact.php" class="svc-card__link">Book detailing <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
@@ -103,8 +127,8 @@ include __DIR__ . '/includes/header.php';
                         <span class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="svc-card__body">
-                        <h3>Enclosed Vehicle Delivery</h3>
-                        <p>Fully insured, enclosed flatbed transport for exotics and classics — or whenever you'd simply prefer zero added miles.</p>
+                        <h3>Vehicle Delivery</h3>
+                        <p>Fully insured flatbed transport for your vehicle — ideal for larger vehicles or whenever you'd simply prefer zero added miles.</p>
                         <a href="contact.php" class="svc-card__link">Request transport <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
@@ -123,7 +147,7 @@ include __DIR__ . '/includes/header.php';
             <div class="process-grid">
                 <div class="process-step" data-scroll-reveal><div class="process-step__num">01</div><h3>Reserve</h3><p>Pick your service and dates online or with a quick call — no long-term contracts.</p></div>
                 <div class="process-step" data-scroll-reveal><div class="process-step__num">02</div><h3>Drop Off</h3><p>Bring your vehicle in, or let us coordinate airport, pier, or curbside pickup.</p></div>
-                <div class="process-step" data-scroll-reveal><div class="process-step__num">03</div><h3>We Care</h3><p>Climate-controlled storage, security monitoring, and any detailing you've booked.</p></div>
+                <div class="process-step" data-scroll-reveal><div class="process-step__num">03</div><h3>We Care</h3><p>Secure indoor or outdoor storage, watched over by our family team, plus any washing or detailing you've booked.</p></div>
                 <div class="process-step" data-scroll-reveal><div class="process-step__num">04</div><h3>Delivery</h3><p>We return your car sparkling and ready — right where and when you need it.</p></div>
             </div>
         </div>

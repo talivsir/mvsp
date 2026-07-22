@@ -10,8 +10,8 @@
                     <img src="assets/images/mvs-logo.png" alt="Maui Vehicle Storage" class="footer-logo-img">
                 </a>
                 <p class="footer-description">
-                    Kahului's most premium and secure vehicle storage, detailing, and delivery service —
-                    a sanctuary for luxury and classic cars on Maui.
+                    Family-owned vehicle storage in Central Maui, about two minutes from Kahului Airport (OGG) —
+                    secure indoor &amp; outdoor storage with airport delivery, washing, and detailing.
                 </p>
                 <form class="footer-newsletter" action="#" method="POST">
                     <span class="footer-newsletter-label">Stay in the loop</span>
@@ -31,8 +31,8 @@
             <div class="footer-col">
                 <h4 class="footer-heading">Services</h4>
                 <ul class="footer-links">
-                    <li><a href="storage.php">Premium Indoor Storage</a></li>
-                    <li><a href="storage.php">Outdoor Fleet Storage</a></li>
+                    <li><a href="storage.php">Covered Indoor Storage</a></li>
+                    <li><a href="storage.php">Outdoor & Fleet Storage</a></li>
                     <li><a href="services.php#detailing">Hand Wash &amp; Detail</a></li>
                     <li><a href="services.php#airport">Airport (OGG) Delivery</a></li>
                 </ul>
@@ -57,19 +57,19 @@
                         <span class="fc-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </span>
-                        <a href="mailto:info@mauivehiclestorage.com">info@mauivehiclestorage.com</a>
+                        <a href="mailto:<?php echo BIZ_EMAIL; ?>"><?php echo BIZ_EMAIL; ?></a>
                     </li>
                     <li>
                         <span class="fc-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </span>
-                        <a href="tel:+18085550198">(808) 555-0198</a>
+                        <a href="tel:<?php echo BIZ_PHONE; ?>"><?php echo BIZ_PHONE_DISPLAY; ?></a>
                     </li>
                     <li>
                         <span class="fc-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
                         </span>
-                        <span>123 Main Street,<br>Kahului, HI 96732</span>
+                        <span>Central Maui<br>Minutes from Kahului Airport (OGG)</span>
                     </li>
                 </ul>
             </div>

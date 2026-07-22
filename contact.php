@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Contact Us';
-$metaDescription = 'Contact Maui Vehicle Storage in Kahului. Get a quote for indoor/outdoor storage, car wash, detailing, or airport pickup services.';
+$metaDescription = 'Contact Maui Vehicle Storage, a family-owned vehicle storage company in Central Maui near Kahului Airport (OGG). Call (808) 575-9008 or email mauivehiclestorage@gmail.com for a quote on indoor/outdoor storage, airport delivery, washing, and detailing.';
 $canonicalUrl = '/contact.php';
 
 include __DIR__ . '/includes/header.php';
@@ -33,33 +33,33 @@ include __DIR__ . '/includes/header.php';
 
                 <!-- Info -->
                 <div class="ct-info" data-scroll-reveal="left">
-                    <div class="ct-info__card">
-                        <div class="ct-info__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <div class="ct-info__card is-accent">
+                        <div class="ct-info__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                         <div>
-                            <h3>Visit Us</h3>
-                            <p>123 Main Street<br>Kahului, HI 96732</p>
+                            <h3>Call Us</h3>
+                            <p>Speak with our family team</p>
+                            <a href="tel:<?php echo BIZ_PHONE; ?>"><?php echo BIZ_PHONE_DISPLAY; ?></a>
                         </div>
                     </div>
                     <div class="ct-info__card">
                         <div class="ct-info__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                         <div>
                             <h3>Email Us</h3>
-                            <a href="mailto:info@mauivehiclestorage.com">info@mauivehiclestorage.com</a>
+                            <a href="mailto:<?php echo BIZ_EMAIL; ?>"><?php echo BIZ_EMAIL; ?></a>
                         </div>
                     </div>
                     <div class="ct-info__card">
                         <div class="ct-info__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                         <div>
                             <h3>Business Hours</h3>
-                            <p>Mon–Fri: 8:00 AM – 6:00 PM<br>Sat: 9:00 AM – 4:00 PM<br>Sun: By appointment</p>
+                            <p>Mon–Fri: 8:00 AM – 4:00 PM<br>Sat: Call for service (appointments available)<br>Sun: Closed</p>
                         </div>
                     </div>
-                    <div class="ct-info__card is-accent">
-                        <div class="ct-info__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="ct-info__card">
+                        <div class="ct-info__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg></div>
                         <div>
-                            <h3>24/7 Dispatch</h3>
-                            <p>Immediate assistance &amp; security</p>
-                            <a href="tel:+18085550198">(808) 555-0198</a>
+                            <h3>Service Area</h3>
+                            <p>Central Maui · minutes from Kahului Airport (OGG). By appointment — we're building our new Kahului home.</p>
                         </div>
                     </div>
                 </div>

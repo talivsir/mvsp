@@ -8,7 +8,7 @@
         <!-- Section Header -->
         <div class="section-header text-center" data-scroll-reveal>
             <h2 class="section-title">Client Experiences</h2>
-            <p class="section-subtitle">See what our premium members have to say about Kahului's finest vehicle sanctuary.</p>
+            <p class="section-subtitle">See what local residents, homeowners, and visitors say about storing their vehicles with our family in Central Maui.</p>
         </div>
 
         <!-- Testimonial Slider Container -->
@@ -20,25 +20,25 @@
                     [
                         "name" => "James L.",
                         "date" => "2 weeks ago",
-                        "text" => "Unbelievable service. I leave my Porsche here every time I fly out of OGG. The climate-controlled facility is pristine and the battery tender service gives me total peace of mind.",
+                        "text" => "I keep my truck here every time I fly back to the mainland. Two minutes from the airport, the family that runs it is so friendly, and my truck is clean and ready the moment I land. Total peace of mind.",
                         "img" => "https://randomuser.me/api/portraits/men/32.jpg"
                     ],
                     [
                         "name" => "Sarah M.",
                         "date" => "1 month ago",
-                        "text" => "Maui Vehicle Storage is a game changer. Airport pickup was seamless and my SUV was fully detailed and waiting for me. Highly recommend for any Maui resident or frequent visitor.",
+                        "text" => "Maui Vehicle Storage is a game changer. Airport pickup was seamless and my SUV was washed and waiting for me. Highly recommend for any Maui resident or frequent visitor.",
                         "img" => "https://randomuser.me/api/portraits/women/44.jpg"
                     ],
                     [
                         "name" => "David W.",
                         "date" => "3 months ago",
-                        "text" => "The security here is top-notch. Finding a truly secure, indoor spot in Kahului wasn't easy until I found MVS. The staff is professional and the facility is immaculate.",
+                        "text" => "Finding safe, affordable vehicle storage in Kahului wasn't easy until I found MVS. The staff is professional, the lot is secure, and they truly treat you like ʻohana.",
                         "img" => "https://randomuser.me/api/portraits/men/86.jpg"
                     ],
                     [
                         "name" => "Elena R.",
                         "date" => "4 months ago",
-                        "text" => "Five stars isn't enough. They handle everything from tire pressure checks to startups. Knowing my exotic is in their hands lets me travel without worry.",
+                        "text" => "We store our second-home car here every off-season. They handle the wash and detailing so it's spotless when we return. Genuinely caring, local service.",
                         "img" => "https://randomuser.me/api/portraits/women/68.jpg"
                     ]
                 ];

@@ -1,29 +1,34 @@
 <?php
 $faqs = [
     [
-        "q" => "Is my vehicle accessible 24/7?",
-        "a" => "Yes, our premium indoor storage clients have 24/7 access by appointment, while outdoor storage has unlimited in/out privileges during regular business hours.",
-        "icon" => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>'
+        "q" => "Where is Maui Vehicle Storage located?",
+        "a" => "We're a family-owned vehicle storage company in Central Maui, about two minutes from Kahului Airport (OGG). That makes dropping off or picking up your vehicle quick and easy before and after your flight.",
+        "icon" => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>'
     ],
     [
-        "q" => "How secure is the facility?",
-        "a" => "Our facility features 24/7 HD video surveillance, fully fenced and gated perimeters, and our premium indoor storage includes a 24/7 armed response system.",
-        "icon" => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>'
+        "q" => "What types of vehicles can you store?",
+        "a" => "We store cars, trucks, boats, and RVs. Whether it's a daily driver, a second-home vehicle, or a work truck, we have indoor and outdoor options to fit your needs and budget.",
+        "icon" => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13l2-5h14l2 5M5 13h14v5H5z"></path><circle cx="7.5" cy="18.5" r="1.5"></circle><circle cx="16.5" cy="18.5" r="1.5"></circle></svg>'
     ],
     [
-        "q" => "Do you offer airport delivery?",
-        "a" => "Absolutely. We offer priority OGG airport delivery for our premium indoor members and as an available add-on for outdoor storage clients.",
+        "q" => "Do you offer airport delivery and pickup?",
+        "a" => "Yes. We deliver your vehicle to and from Kahului Airport (OGG), plus curbside pickup and drop-off across the island — so you can skip the shuttles and rental lines.",
         "icon" => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>'
     ],
     [
-        "q" => "Are battery tenders included?",
-        "a" => "Battery tenders and regular tire pressure maintenance are included complimentary with all Premium Indoor Storage plans.",
-        "icon" => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="16" height="10" rx="2" ry="2"></rect><line x1="22" y1="11" x2="22" y2="13"></line></svg>'
+        "q" => "How secure is my vehicle?",
+        "a" => "Your vehicle is stored in a fully fenced and gated facility and looked after by our local, family-run team who treat every car like their own ʻohana.",
+        "icon" => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>'
     ],
     [
-        "q" => "Is the storage climate-controlled?",
-        "a" => "Our Premium Indoor facility is 100% climate-controlled, ensuring your luxury or exotic vehicle is protected from humidity and temperature fluctuations.",
-        "icon" => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>'
+        "q" => "When can I access my vehicle?",
+        "a" => "Indoor storage clients have 24/7 access by appointment, and outdoor storage offers in/out access during regular business hours.",
+        "icon" => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>'
+    ],
+    [
+        "q" => "Do you wash and detail vehicles?",
+        "a" => "Yes. Car washing, full detailing, and battery tending are available as optional add-on services, so your vehicle is clean and ready to drive the moment you return.",
+        "icon" => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>'
     ]
 ];
 
@@ -56,7 +61,7 @@ $json_ld = json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     <div class="container">
         <div class="section-header text-center" data-scroll-reveal>
             <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">Find answers to common questions about our secure vehicle storage facility.</p>
+            <p class="section-subtitle">Answers to common questions about storing your vehicle in Central Maui, minutes from Kahului Airport (OGG).</p>
         </div>
 
         <div class="faq-search-wrapper" data-scroll-reveal>

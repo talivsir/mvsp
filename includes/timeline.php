@@ -39,7 +39,7 @@
                     </div>
                     <div class="card-content">
                         <h3>2. Vehicle Stored</h3>
-                        <p>Your vehicle is kept secure, clean, and meticulously maintained in our state-of-the-art facility.</p>
+                        <p>Your vehicle is kept secure and cared for by our local family team, in a fully fenced facility, while you're away.</p>
                     </div>
                 </div>
             </div>

@@ -14,7 +14,7 @@
         <!-- Section Header -->
         <div class="section-header text-center" data-scroll-reveal>
             <h2 class="section-title">Why Choose Us</h2>
-            <p class="section-subtitle">We don't just store vehicles; we provide a premium sanctuary backed by world-class convenience.</p>
+            <p class="section-subtitle">We're a local, family-owned team that treats your vehicle — and you — like ʻohana, with real convenience from drop-off to airport pickup.</p>
         </div>
 
         <!-- Alternating Features Layout -->
@@ -44,11 +44,11 @@
             <!-- Feature 2 (Reversed) -->
             <div class="wcu-row reverse" data-scroll-reveal>
                 <div class="wcu-content">
-                    <h3 class="wcu-title">Secure Indoor Storage</h3>
-                    <p class="wcu-desc">Maui's tropical climate is tough on paint and interiors. Our climate-controlled indoor sanctuary shields your investment from salt air, humidity, and UV damage.</p>
+                    <h3 class="wcu-title">Covered Indoor Storage</h3>
+                    <p class="wcu-desc">Maui's salt air and sun are tough on any vehicle. Our covered indoor storage keeps your car out of the elements, dust, and UV — an ideal choice for longer stays away from the island.</p>
                     <ul class="wcu-list">
-                        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Climate Controlled</li>
-                        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Battery Tender Included</li>
+                        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Covered &amp; Protected</li>
+                        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Battery Tending (optional add-on)</li>
                     </ul>
                 </div>
                 <div class="wcu-card-wrapper">
@@ -66,10 +66,10 @@
             <div class="wcu-row" data-scroll-reveal>
                 <div class="wcu-content">
                     <h3 class="wcu-title">Affordable Outdoor & Fleet</h3>
-                    <p class="wcu-desc">Need space for larger vehicles, RVs, or a commercial fleet? Our fully fenced, brightly lit, and 24/7 monitored outdoor lots offer immense value without compromising on security.</p>
+                    <p class="wcu-desc">Need space for larger vehicles, boats, RVs, or a commercial fleet? Our fully fenced, brightly lit outdoor lots offer great value and easy access for vehicles of every size.</p>
                     <ul class="wcu-list">
-                        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> HD Camera Surveillance</li>
-                        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Ample Turning Radius</li>
+                        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Fully Fenced &amp; Gated</li>
+                        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Room for Trucks, Boats &amp; RVs</li>
                     </ul>
                 </div>
                 <div class="wcu-card-wrapper">
@@ -109,20 +109,20 @@
         <!-- Animated Counters Section -->
         <div class="wcu-stats-container" id="wcu-stats" data-scroll-reveal>
             <div class="wcu-stat-box glass-card">
-                <div class="stat-number" data-target="15">0</div>
-                <div class="stat-label">Years Experience</div>
+                <div class="stat-number" data-target="10">0</div>
+                <div class="stat-label">Years Serving Maui</div>
             </div>
             <div class="wcu-stat-box glass-card">
-                <div class="stat-number" data-target="1000">0</div>
-                <div class="stat-label">Vehicles Secured</div>
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Vehicles Stored</div>
             </div>
             <div class="wcu-stat-box glass-card">
-                <div class="stat-number" data-target="24">0</div>
-                <div class="stat-label">Hour Monitoring</div>
+                <div class="stat-number" data-target="2">0</div>
+                <div class="stat-label">Min. from OGG</div>
             </div>
             <div class="wcu-stat-box glass-card">
                 <div class="stat-number" data-target="100">0</div>
-                <div class="stat-label">% Satisfaction</div>
+                <div class="stat-label">% Family-Owned</div>
             </div>
         </div>
 
