@@ -1,118 +1,137 @@
+<?php
+/* ============================================================
+   AROUND THE LOT — tabbed, auto-scrolling photo carousel
+   Each tab shows its own set of local photos (img/lot/) looping
+   right-to-left; exactly 3 photos are visible in the frame at a
+   time (see .lot-carousel-item width, set responsively in CSS/JS).
+   ============================================================ */
+
+$lotCategories = [
+    'vehicles' => [
+        'label' => 'Vehicles',
+        'items' => [
+            ['img' => 'img/lot/vehicles-1.jpg', 'title' => 'Everyday Ride',      'sub' => 'Stored on Maui'],
+            ['img' => 'img/lot/vehicles-2.jpg', 'title' => 'Ready to Roll',      'sub' => 'Cars, Trucks & More'],
+            ['img' => 'img/lot/vehicles-3.jpg', 'title' => 'Family SUV',         'sub' => 'Safe & Secure'],
+            ['img' => 'img/lot/vehicles-4.jpg', 'title' => 'Weekend Cruiser',    'sub' => 'On Our Maui Lot'],
+            ['img' => 'img/lot/vehicles-5.jpg', 'title' => 'Daily Driver',       'sub' => 'Stored on Maui'],
+            ['img' => 'img/lot/vehicles-6.jpg', 'title' => 'Island Ready',       'sub' => 'Cars, Trucks & More'],
+        ],
+    ],
+    'storage' => [
+        'label' => 'Storage',
+        'items' => [
+            ['img' => 'img/lot/storage-1.jpg', 'title' => 'Covered Storage',    'sub' => 'On Our Maui Lot'],
+            ['img' => 'img/lot/storage-2.jpg', 'title' => 'Secure Bays',        'sub' => 'Cars, Boats & RVs'],
+            ['img' => 'img/lot/storage-3.jpg', 'title' => 'Gated & Watched',    'sub' => '24/7 Peace of Mind'],
+            ['img' => 'img/lot/storage-4.jpg', 'title' => 'Room for Everything','sub' => 'Boats, RVs & Fleets'],
+            ['img' => 'img/lot/storage-5.jpg', 'title' => 'Central Maui',       'sub' => 'Minutes from OGG'],
+        ],
+    ],
+    'detailing' => [
+        'label' => 'Detailing',
+        'items' => [
+            ['img' => 'img/lot/detailing-1.jpg', 'title' => 'Hand Wash & Detail',  'sub' => 'Ready When You Are'],
+            ['img' => 'img/lot/detailing-2.jpg', 'title' => 'Spot-Free Finish',    'sub' => 'Detailing Services'],
+            ['img' => 'img/lot/detailing-3.jpg', 'title' => 'Interior Refresh',    'sub' => 'Fresh & Clean'],
+            ['img' => 'img/lot/detailing-4.jpg', 'title' => 'Paint Correction',    'sub' => 'Detailing Services'],
+            ['img' => 'img/lot/detailing-5.jpg', 'title' => 'Pre-Pickup Prep',     'sub' => 'Washed & Ready'],
+        ],
+    ],
+    'registrations' => [
+        'label' => 'Registrations',
+        'items' => [
+            ['img' => 'img/lot/registrations-1.jpg', 'title' => 'Registration Help',       'sub' => 'Renewals & Transfers'],
+            ['img' => 'img/lot/registrations-2.jpg', 'title' => 'Title & Plate Guidance',   'sub' => 'We Handle the Paperwork'],
+            ['img' => 'img/lot/registrations-3.jpg', 'title' => 'Vehicle Registration',     'sub' => 'Fast & Friendly'],
+            ['img' => 'img/lot/registrations-4.jpg', 'title' => 'Out-of-State Transfers',   'sub' => 'Made Simple'],
+            ['img' => 'img/lot/registrations-5.jpg', 'title' => 'Expert Assistance',        'sub' => 'Registration Services'],
+        ],
+    ],
+    'driving-test' => [
+        'label' => 'Driving Test',
+        'items' => [
+            ['img' => 'img/lot/driving-test-1.jpg', 'title' => 'DMV Road Test',          'sub' => 'Fully Insured Vehicle'],
+            ['img' => 'img/lot/driving-test-2.jpg', 'title' => 'Test-Ready Car',         'sub' => 'Inspected & Compliant'],
+            ['img' => 'img/lot/driving-test-3.jpg', 'title' => 'Driving Test in Progress','sub' => 'Confidence Behind the Wheel'],
+            ['img' => 'img/lot/driving-test-4.jpg', 'title' => 'Student Driver',         'sub' => 'DMV Rental'],
+            ['img' => 'img/lot/driving-test-5.jpg', 'title' => 'Pass with Confidence',   'sub' => 'DMV Test Vehicle'],
+        ],
+    ],
+    'containers' => [
+        'label' => 'Containers',
+        'items' => [
+            ['img' => 'img/lot/containers-1.jpg', 'title' => 'Container Storage',      'sub' => 'Secure & Flexible'],
+            ['img' => 'img/lot/containers-2.jpg', 'title' => 'Private Containers',     'sub' => 'Shielded from the Elements'],
+            ['img' => 'img/lot/containers-3.jpg', 'title' => '24/7 Access',            'sub' => 'On Our Maui Lot'],
+            ['img' => 'img/lot/containers-4.jpg', 'title' => 'Extra Protection',       'sub' => 'Sealed Storage'],
+            ['img' => 'img/lot/containers-5.jpg', 'title' => 'More Space',             'sub' => 'For a Brighter Tomorrow'],
+            ['img' => 'img/lot/containers-6.jpg', 'title' => 'Trusted Local Storage',  'sub' => 'Containers on Maui'],
+        ],
+    ],
+];
+
+// "All" tab = every photo from every category, in category order.
+$lotAllItems = [];
+foreach ($lotCategories as $cat) {
+    $lotAllItems = array_merge($lotAllItems, $cat['items']);
+}
+
+function renderLotTrack($items) {
+    // Duplicated so the CSS animation (translateX to -50%) loops seamlessly.
+    $doubled = array_merge($items, $items);
+    foreach ($doubled as $item) {
+        $imgAbs = __DIR__ . '/../' . $item['img'];
+        $src = $item['img'] . (is_file($imgAbs) ? '?v=' . filemtime($imgAbs) : '');
+        echo '<div class="gallery-item lot-carousel-item">';
+        echo '  <div class="gallery-img-wrapper" data-full="' . htmlspecialchars($item['img']) . '">';
+        echo '    <img src="' . htmlspecialchars($src) . '" alt="' . htmlspecialchars($item['title']) . '" loading="lazy">';
+        echo '    <div class="gallery-overlay">';
+        echo '      <div class="gallery-caption"><h4>' . htmlspecialchars($item['title']) . '</h4><p>' . htmlspecialchars($item['sub']) . '</p></div>';
+        echo '      <div class="zoom-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>';
+        echo '    </div>';
+        echo '  </div>';
+        echo '</div>';
+    }
+}
+?>
 <section class="gallery-section" id="gallery">
     <div class="container">
-        
+
         <div class="section-header text-center" data-scroll-reveal>
             <h2 class="section-title">Around the Lot</h2>
-            <p class="section-subtitle">A look at the everyday vehicles we store and care for here on Maui.</p>
+            <p class="section-subtitle">A look at the everyday vehicles and services we handle here on Maui.</p>
         </div>
 
-        <!-- Filter Controls -->
-        <div class="gallery-filters text-center" data-scroll-reveal>
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="vehicles">Vehicles</button>
-            <button class="filter-btn" data-filter="storage">Storage</button>
-            <button class="filter-btn" data-filter="detailing">Detailing</button>
+        <!-- Tabs (single line, scrolls horizontally on small screens) -->
+        <div class="lot-tabs-wrapper" data-scroll-reveal>
+            <div class="lot-tabs">
+                <button class="filter-btn active" data-lot-filter="all">All</button>
+                <?php foreach ($lotCategories as $slug => $cat): ?>
+                    <button class="filter-btn" data-lot-filter="<?php echo htmlspecialchars($slug); ?>"><?php echo htmlspecialchars($cat['label']); ?></button>
+                <?php endforeach; ?>
+            </div>
         </div>
 
-        <!-- Masonry Grid -->
-        <div class="gallery-masonry" data-scroll-reveal>
-            <!-- Item 1: Vehicle (Landscape) -->
-            <div class="gallery-item" data-category="vehicles">
-                <div class="gallery-img-wrapper" data-full="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=1600">
-                    <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=800" alt="Vehicle stored on Maui near Kahului Airport" loading="lazy">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h4>Stored &amp; Ready</h4>
-                            <p>Stored on Maui</p>
-                        </div>
-                        <div class="zoom-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                        </div>
-                    </div>
+        <!-- Carousels: one per category, only the active one is shown -->
+        <div class="lot-carousels" data-scroll-reveal>
+
+            <div class="lot-carousel-wrapper is-active" data-lot-panel="all">
+                <div class="lot-carousel-track">
+                    <?php renderLotTrack($lotAllItems); ?>
                 </div>
             </div>
 
-            <!-- Item 2: Storage (Portrait) -->
-            <div class="gallery-item" data-category="storage">
-                <div class="gallery-img-wrapper" data-full="https://images.unsplash.com/photo-1604085448661-d7790b4372bd?auto=format&fit=crop&q=80&w=1600">
-                    <img src="https://images.unsplash.com/photo-1604085448661-d7790b4372bd?auto=format&fit=crop&q=80&w=600" alt="Covered vehicle storage on Maui" loading="lazy">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h4>Covered Storage</h4>
-                            <p>On Our Maui Lot</p>
-                        </div>
-                        <div class="zoom-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                        </div>
-                    </div>
+            <?php foreach ($lotCategories as $slug => $cat): ?>
+            <div class="lot-carousel-wrapper" data-lot-panel="<?php echo htmlspecialchars($slug); ?>">
+                <div class="lot-carousel-track">
+                    <?php renderLotTrack($cat['items']); ?>
                 </div>
             </div>
-
-            <!-- Item 3: Detailing (Landscape) -->
-            <div class="gallery-item" data-category="detailing">
-                <div class="gallery-img-wrapper" data-full="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=1600">
-                    <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=800" alt="Car Washing" loading="lazy">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h4>Spot-free Wash</h4>
-                            <p>Detailing Services</p>
-                        </div>
-                        <div class="zoom-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item 4: Vehicle (Portrait) -->
-            <div class="gallery-item" data-category="vehicles">
-                <div class="gallery-img-wrapper" data-full="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=1600">
-                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=600" alt="Vehicle stored on Maui" loading="lazy">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h4>Everyday Rides</h4>
-                            <p>Stored on Maui</p>
-                        </div>
-                        <div class="zoom-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item 5: Detailing (Landscape) -->
-            <div class="gallery-item" data-category="detailing">
-                <div class="gallery-img-wrapper" data-full="https://images.unsplash.com/photo-1587582423116-ec07293f0395?auto=format&fit=crop&q=80&w=1600">
-                    <img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?auto=format&fit=crop&q=80&w=800" alt="Polishing" loading="lazy">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h4>Paint Correction</h4>
-                            <p>Detailing Services</p>
-                        </div>
-                        <div class="zoom-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item 6: Vehicle (Portrait) -->
-            <div class="gallery-item" data-category="vehicles">
-                <div class="gallery-img-wrapper" data-full="https://images.unsplash.com/photo-1503376712341-ea4025d2fc75?auto=format&fit=crop&q=80&w=1600">
-                    <img src="https://images.unsplash.com/photo-1503376712341-ea4025d2fc75?auto=format&fit=crop&q=80&w=600" alt="Interior detailing service" loading="lazy">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h4>Fresh &amp; Clean</h4>
-                            <p>Interior Detailing</p>
-                        </div>
-                        <div class="zoom-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
 
         </div>
+
     </div>
 </section>
 

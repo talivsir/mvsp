@@ -7,7 +7,8 @@
         
         <!-- Section Header -->
         <div class="section-header text-center" data-scroll-reveal>
-            <h2 class="section-title">Client Experiences</h2>
+            <span class="section-eyebrow section-eyebrow--center">Client Experience</span>
+            <h2 class="section-title">Loved by Locals &amp; Visitors</h2>
             <p class="section-subtitle">See what local residents, homeowners, and visitors say about storing their vehicles with our family in Central Maui.</p>
         </div>
 

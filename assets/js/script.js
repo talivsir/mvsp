@@ -315,43 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /* --- 10. Premium Timeline Scroll Animation --- */
-    const timelineSection = document.querySelector('.premium-timeline-section');
-    const timelineProgress = document.getElementById('timelineProgress');
-    const timelineRows = document.querySelectorAll('.timeline-row');
-
-    if (timelineSection && timelineProgress) {
-        window.addEventListener('scroll', () => {
-            const sectionTop = timelineSection.offsetTop;
-            const sectionHeight = timelineSection.offsetHeight;
-            const windowHeight = window.innerHeight;
-            const scrollY = window.scrollY;
-
-            // Calculate how far we've scrolled into the section
-            // Start filling when section top is at center of viewport
-            const startScroll = sectionTop - (windowHeight / 2);
-            const endScroll = sectionTop + sectionHeight - (windowHeight / 2);
-
-            if (scrollY >= startScroll && scrollY <= endScroll) {
-                const percentage = ((scrollY - startScroll) / (endScroll - startScroll)) * 100;
-                timelineProgress.style.height = `${percentage}%`;
-            } else if (scrollY > endScroll) {
-                timelineProgress.style.height = '100%';
-            } else if (scrollY < startScroll) {
-                timelineProgress.style.height = '0%';
-            }
-
-            // Reveal active state on markers
-            timelineRows.forEach(row => {
-                const rowTop = row.getBoundingClientRect().top;
-                if (rowTop < windowHeight * 0.7) {
-                    row.classList.add('is-visible');
-                } else {
-                }
-            });
-        });
-    }
-
     /* --- 11. Contact Form Validation & Animation --- */
     const contactForm = document.getElementById('mainContactForm');
     if (contactForm) {
@@ -445,6 +408,14 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 preloader.style.display = 'none';
             }, 800);
+        }
+
+        // Play the hero's entrance animation once the preloader has actually
+        // faded out (it takes 800ms), so the 1s fade-up plays fully visible
+        // instead of racing/being masked by the preloader's own fade.
+        const heroSection = document.querySelector('.lux-hero');
+        if (heroSection) {
+            setTimeout(() => heroSection.classList.add('hero-in'), 750);
         }
     });
 
@@ -599,6 +570,121 @@ document.addEventListener('DOMContentLoaded', () => {
                     heroCarReflect.style.filter = `${filterStyle} scaleY(-1)`;
                 }
             });
+        });
+    }
+
+    /* --- Hero Banner Slideshow (crossfade) --- Each banner sits stacked in
+       the same spot; every tick the next banner fades in via opacity while
+       the current one fades out at the same time (plain CSS transition).
+       Every slide is force-reset to "hidden" on each tick except the two
+       involved, so state can never drift across repeat cycles. */
+    const heroSlides = document.querySelectorAll('.lux-hero__slideshow .lux-hero__photo');
+    if (heroSlides.length > 1) {
+        const HERO_TRANSITION_MS = 1300; // fade duration
+        const HERO_HOLD_MS = 4200;       // how long each banner stays fully visible
+        let heroCurrent = 0;
+
+        function advanceHero() {
+            const next = (heroCurrent + 1) % heroSlides.length;
+            const currentEl = heroSlides[heroCurrent];
+            const nextEl = heroSlides[next];
+
+            heroSlides.forEach((el) => {
+                if (el !== currentEl && el !== nextEl) {
+                    el.classList.remove('is-active');
+                }
+            });
+
+            nextEl.classList.add('is-active');
+            currentEl.classList.remove('is-active');
+
+            heroCurrent = next;
+        }
+
+        setInterval(advanceHero, HERO_TRANSITION_MS + HERO_HOLD_MS);
+    }
+
+    /* --- Around the Lot: tabs + auto-scrolling carousel --- */
+    const lotTabs = document.querySelectorAll('[data-lot-filter]');
+    const lotPanels = document.querySelectorAll('[data-lot-panel]');
+
+    if (lotTabs.length && lotPanels.length) {
+
+        // Keep exactly ~3 photos visible per row, responsive to screen size.
+        function sizeLotItems() {
+            const wrapper = document.querySelector('.lot-carousel-wrapper.is-active') || document.querySelector('.lot-carousel-wrapper');
+            if (!wrapper || !wrapper.clientWidth) return;
+            const gap = 24;
+            let visible = 3;
+            if (window.innerWidth < 640) visible = 1.15;
+            else if (window.innerWidth < 940) visible = 2;
+            const w = (wrapper.clientWidth - gap * (visible - 1)) / visible;
+            document.documentElement.style.setProperty('--lot-item-w', w + 'px');
+        }
+
+        // Give each track a duration proportional to its length so every
+        // category scrolls at the same visual speed, however many photos it has.
+        function paceLotTracks() {
+            const pxPerSecond = 55;
+            document.querySelectorAll('.lot-carousel-track').forEach(track => {
+                const distance = track.scrollWidth / 2;
+                const duration = Math.max(distance / pxPerSecond, 10);
+                track.style.setProperty('--lot-duration', duration + 's');
+            });
+        }
+
+        function refreshLot() {
+            sizeLotItems();
+            paceLotTracks();
+        }
+
+        refreshLot();
+        window.addEventListener('load', refreshLot);
+        let lotResizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(lotResizeTimer);
+            lotResizeTimer = setTimeout(refreshLot, 200);
+        });
+
+        lotTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const filter = tab.getAttribute('data-lot-filter');
+
+                lotTabs.forEach(t => t.classList.toggle('active', t === tab));
+                lotPanels.forEach(panel => {
+                    panel.classList.toggle('is-active', panel.getAttribute('data-lot-panel') === filter);
+                });
+
+                requestAnimationFrame(refreshLot);
+            });
+        });
+    }
+
+    /* --- Around the Lot: lightbox --- */
+    const galleryLightbox = document.getElementById('galleryLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    if (galleryLightbox && lightboxImg) {
+        document.querySelectorAll('.gallery-img-wrapper').forEach(wrapper => {
+            wrapper.addEventListener('click', () => {
+                const full = wrapper.getAttribute('data-full');
+                if (!full) return;
+                lightboxImg.src = full;
+                lightboxImg.alt = wrapper.querySelector('img') ? wrapper.querySelector('img').alt : '';
+                galleryLightbox.classList.add('active');
+            });
+        });
+
+        function closeLightbox() {
+            galleryLightbox.classList.remove('active');
+        }
+        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+        galleryLightbox.addEventListener('click', (e) => {
+            if (e.target === galleryLightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
         });
     }
 

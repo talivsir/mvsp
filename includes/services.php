@@ -1,8 +1,17 @@
-<section class="services-section bg-light-gray" id="services">
+<?php
+if (!function_exists('timelineImg')) {
+    function timelineImg($relPath) {
+        $abs = __DIR__ . '/../' . $relPath;
+        return $relPath . (is_file($abs) ? '?v=' . filemtime($abs) : '');
+    }
+}
+?>
+<section class="services-section" id="services">
     <div class="container">
-        
+
         <!-- Section Header -->
         <div class="section-header text-center" data-scroll-reveal>
+            <span class="section-eyebrow section-eyebrow--center">White-Glove Care</span>
             <h2 class="section-title">Premium Services</h2>
             <p class="section-subtitle">Beyond storage. We offer a full suite of white-glove services to ensure your vehicle is always ready for your next Maui adventure.</p>
         </div>
@@ -13,7 +22,7 @@
             <!-- Service: Complete Detailing -->
             <div class="service-card large-card" data-scroll-reveal>
                 <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=800" alt="Complete Detailing" class="service-img">
+                    <img src="<?php echo timelineImg('img/premiumservices/complete-detailing.jpg'); ?>" alt="Complete Detailing" class="service-img">
                     <div class="service-gradient-overlay"></div>
                 </div>
                 <div class="service-content">
@@ -28,7 +37,7 @@
             <!-- Service: Airport Delivery -->
             <div class="service-card" data-scroll-reveal>
                 <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=600" alt="Airport Delivery" class="service-img">
+                    <img src="<?php echo timelineImg('img/premiumservices/airport-delivery.jpg'); ?>" alt="Airport Delivery" class="service-img">
                     <div class="service-gradient-overlay"></div>
                 </div>
                 <div class="service-content">
@@ -43,7 +52,7 @@
             <!-- Service: Car Wash -->
             <div class="service-card" data-scroll-reveal>
                 <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&q=80&w=600" alt="Car Wash" class="service-img">
+                    <img src="<?php echo timelineImg('img/premiumservices/car-wash.jpg'); ?>" alt="Car Wash" class="service-img">
                     <div class="service-gradient-overlay"></div>
                 </div>
                 <div class="service-content">
@@ -58,7 +67,7 @@
             <!-- Service: Malama Car Wash -->
             <div class="service-card" data-scroll-reveal>
                 <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&q=80&w=600" alt="Malama Car Wash" class="service-img">
+                    <img src="<?php echo timelineImg('img/premiumservices/malama-car-wash.jpg'); ?>" alt="Malama Car Wash" class="service-img">
                     <div class="service-gradient-overlay"></div>
                 </div>
                 <div class="service-content">
@@ -73,7 +82,7 @@
             <!-- Service: Pier Pickup -->
             <div class="service-card" data-scroll-reveal>
                 <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1542272201-b1ca555f8505?auto=format&fit=crop&q=80&w=600" alt="Pier Pickup" class="service-img">
+                    <img src="<?php echo timelineImg('img/premiumservices/pier-pickup.jpg'); ?>" alt="Pier Pickup" class="service-img">
                     <div class="service-gradient-overlay"></div>
                 </div>
                 <div class="service-content">
@@ -88,7 +97,7 @@
             <!-- Service: Curbside Pickup -->
             <div class="service-card" data-scroll-reveal>
                 <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&q=80&w=600" alt="Curbside Pickup" class="service-img">
+                    <img src="<?php echo timelineImg('img/premiumservices/curbside-pickup.jpg'); ?>" alt="Curbside Pickup" class="service-img">
                     <div class="service-gradient-overlay"></div>
                 </div>
                 <div class="service-content">
@@ -103,7 +112,7 @@
             <!-- Service: Vehicle Delivery -->
             <div class="service-card large-card" data-scroll-reveal>
                 <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&q=80&w=800" alt="Vehicle Delivery" class="service-img">
+                    <img src="<?php echo timelineImg('img/premiumservices/vehicle-delivery.jpg'); ?>" alt="Vehicle Delivery" class="service-img">
                     <div class="service-gradient-overlay"></div>
                 </div>
                 <div class="service-content">
@@ -118,7 +127,7 @@
         </div>
 
         <!-- Section CTA -->
-        <div class="text-center mt-5" data-scroll-reveal>
+        <div class="services-cta text-center" data-scroll-reveal>
             <a href="#contact" class="btn btn-primary btn-lg btn-glow btn-animated">Schedule a Service</a>
         </div>
 

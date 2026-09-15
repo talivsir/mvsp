@@ -44,7 +44,7 @@
                 <ul class="footer-links">
                     <li><a href="about.php">About Us</a></li>
                     <li><a href="dmv-rental.php">DMV Rental</a></li>
-                    <li><a href="index.php#pricing">Pricing Plans</a></li>
+                    <li><a href="index.php#gallery">Around the Lot</a></li>
                     <li><a href="index.php#faq">FAQ</a></li>
                 </ul>
             </div>
@@ -100,6 +100,6 @@
 </button>
 
 <!-- Custom JavaScript -->
-<script src="assets/js/script.js"></script>
+<script src="assets/js/script.js?v=<?php echo filemtime(__DIR__ . '/../assets/js/script.js'); ?>"></script>
 </body>
 </html>

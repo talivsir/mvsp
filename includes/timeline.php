@@ -1,113 +1,99 @@
+<?php
+/* Cache-bust local timeline images so an updated file is never served stale,
+   and fall back gracefully (no query string, no PHP warning) if one is missing. */
+function timelineImg($relPath) {
+    $abs = __DIR__ . '/../' . $relPath;
+    return $relPath . (is_file($abs) ? '?v=' . filemtime($abs) : '');
+}
+
+$expCards = [
+    [
+        'num'   => '01',
+        'area'  => 'a',
+        'size'  => 'exp-card--large',
+        'img'   => timelineImg('img/car-washing.jpg'),
+        'alt'   => 'Car washing and detailing',
+        'title' => 'Wash &amp; Detailing',
+        'desc'  => 'Optional hand wash and full detailing so your vehicle is fresh, clean, and ready the moment you return.',
+        'icon'  => '<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" stroke-linejoin="round"></path>',
+    ],
+    [
+        'num'   => '02',
+        'area'  => 'b',
+        'size'  => 'exp-card--tall',
+        'img'   => timelineImg('img/vehicle-storage.jpg'),
+        'alt'   => 'Vehicle storage',
+        'title' => 'Vehicle Storage',
+        'desc'  => 'Kept secure and cared for by our local family team, in a fully fenced facility, while you&rsquo;re away.',
+        'icon'  => '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>',
+    ],
+    [
+        'num'   => '03',
+        'area'  => 'c',
+        'size'  => '',
+        'img'   => timelineImg('img/lot/registrations-1.jpg'),
+        'alt'   => 'Vehicle registration renewal',
+        'title' => 'Registration Renewal',
+        'desc'  => 'We handle your vehicle&rsquo;s registration renewal while it&rsquo;s in our care.',
+        'icon'  => '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M9 15l2 2 4-4"></path>',
+    ],
+    [
+        'num'   => '04',
+        'area'  => 'd',
+        'size'  => 'exp-card--tall',
+        'img'   => timelineImg('img/container-storage.jpg'),
+        'alt'   => 'Container storage',
+        'title' => 'Container Storage',
+        'desc'  => 'Prefer extra protection? Your vehicle can be sealed in its own private storage container, shielded from dust, weather, and prying eyes.',
+        'icon'  => '<path d="M21 8l-9-5-9 5 9 5 9-5z"></path><path d="M3 8v8l9 5 9-5V8"></path><path d="M12 13v8"></path>',
+    ],
+    [
+        'num'   => '05',
+        'area'  => 'e',
+        'size'  => 'exp-card--wide',
+        'img'   => timelineImg('img/servicing-oil-change.jpg'),
+        'alt'   => 'Vehicle servicing and oil change',
+        'title' => 'Servicing &amp; Oil Change',
+        'desc'  => 'Routine servicing and oil changes while your vehicle is in our care, so it&rsquo;s running smoothly and ready to go.',
+        'icon'  => '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke-linecap="round" stroke-linejoin="round"></path>',
+    ],
+    [
+        'num'   => '06',
+        'area'  => 'f',
+        'size'  => '',
+        'img'   => timelineImg('img/driving-test.jpg'),
+        'alt'   => 'DMV driving test vehicle rental',
+        'title' => 'Driving Test',
+        'desc'  => 'Need a car for your DMV road test? Fully insured, thoroughly inspected, ready with confidence.',
+        'icon'  => '<circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="2.5"></circle><path d="M12 5v2.5M6.5 15.5L9 14M17.5 15.5L15 14" stroke-linecap="round"></path>',
+    ],
+];
+?>
 <section class="premium-timeline-section" id="how-it-works">
     <div class="container">
-        
+
         <div class="section-header text-center" data-scroll-reveal>
+            <span class="section-eyebrow section-eyebrow--center">Start to Finish</span>
             <h2 class="section-title">The Seamless Experience</h2>
-            <p class="section-subtitle">From booking to the beach, we handle every detail so you can focus on the island.</p>
+            <p class="section-subtitle">Six ways we take care of your vehicle &mdash; and you &mdash; from drop-off to drive-away.</p>
         </div>
 
-        <div class="premium-timeline">
-            <!-- Center Line -->
-            <div class="timeline-track">
-                <div class="timeline-progress" id="timelineProgress"></div>
-            </div>
-
-            <!-- Step 1: Book Online -->
-            <div class="timeline-row left" data-scroll-reveal="left">
-                <div class="timeline-card">
-                    <div class="card-illustration">
-                        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=600" alt="Book Online">
+        <div class="exp-bento">
+            <?php foreach ($expCards as $i => $c): ?>
+            <div class="exp-card exp-card--<?php echo $c['area']; ?> <?php echo $c['size']; ?>" data-scroll-reveal="<?php echo $i % 2 === 0 ? 'left' : 'right'; ?>">
+                <img class="exp-card__img" src="<?php echo htmlspecialchars($c['img']); ?>" alt="<?php echo htmlspecialchars($c['alt']); ?>" loading="lazy">
+                <div class="exp-card__scrim"></div>
+                <span class="exp-card__num"><?php echo $c['num']; ?></span>
+                <div class="exp-card__body">
+                    <div class="exp-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><?php echo $c['icon']; ?></svg>
                     </div>
-                    <div class="card-content">
-                        <h3>1. Book Online</h3>
-                        <p>Easily reserve your vehicle storage space, detailing, or airport delivery service through our premium portal.</p>
-                    </div>
-                </div>
-                <div class="timeline-marker">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <h3><?php echo $c['title']; ?></h3>
+                    <p><?php echo $c['desc']; ?></p>
                 </div>
             </div>
-
-            <!-- Step 2: Vehicle Stored -->
-            <div class="timeline-row right" data-scroll-reveal="right">
-                <div class="timeline-marker">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                </div>
-                <div class="timeline-card">
-                    <div class="card-illustration">
-                        <img src="assets/images/luxury_vehicle_storage.png" alt="Vehicle Stored">
-                    </div>
-                    <div class="card-content">
-                        <h3>2. Vehicle Stored</h3>
-                        <p>Your vehicle is kept secure and cared for by our local family team, in a fully fenced facility, while you're away.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 3: Arrive in Maui -->
-            <div class="timeline-row left" data-scroll-reveal="left">
-                <div class="timeline-card">
-                    <div class="card-illustration">
-                        <img src="https://images.unsplash.com/photo-1537956965359-7573183d1f57?auto=format&fit=crop&q=80&w=600" alt="Arrive in Maui">
-                    </div>
-                    <div class="card-content">
-                        <h3>3. Arrive in Maui</h3>
-                        <p>Step off your flight at Kahului Airport (OGG) and breathe in the warm tropical air.</p>
-                    </div>
-                </div>
-                <div class="timeline-marker">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"></path><path d="M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
-                </div>
-            </div>
-
-            <!-- Step 4: Airport Pickup -->
-            <div class="timeline-row right" data-scroll-reveal="right">
-                <div class="timeline-marker">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                </div>
-                <div class="timeline-card">
-                    <div class="card-illustration">
-                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=600" alt="Airport Pickup">
-                    </div>
-                    <div class="card-content">
-                        <h3>4. Airport Pickup</h3>
-                        <p>We deliver your freshly washed and prepped vehicle directly to you at the terminal curbside.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 5: Drive Away -->
-            <div class="timeline-row left" data-scroll-reveal="left">
-                <div class="timeline-card">
-                    <div class="card-illustration">
-                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600" alt="Drive Away">
-                    </div>
-                    <div class="card-content">
-                        <h3>5. Drive Away</h3>
-                        <p>No waiting for shuttles, no standing in rental lines. Just get in your own car and go.</p>
-                    </div>
-                </div>
-                <div class="timeline-marker">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                </div>
-            </div>
-
-            <!-- Step 6: Enjoy Vacation -->
-            <div class="timeline-row right" data-scroll-reveal="right">
-                <div class="timeline-marker">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                </div>
-                <div class="timeline-card">
-                    <div class="card-illustration">
-                        <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?auto=format&fit=crop&q=80&w=600" alt="Enjoy Vacation">
-                    </div>
-                    <div class="card-content">
-                        <h3>6. Enjoy Vacation</h3>
-                        <p>Experience the beauty of Maui without any transportation stress. When you leave, we do it all in reverse.</p>
-                    </div>
-                </div>
-            </div>
-
+            <?php endforeach; ?>
         </div>
+
     </div>
 </section>

@@ -161,7 +161,7 @@ include __DIR__ . '/includes/header.php';
                 <p class="page-cta__sub">Tell us what you need and we'll build the perfect care plan for your car.</p>
                 <div class="page-cta__actions">
                     <a href="contact.php" class="btn-gold">Schedule a Service <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    <a href="index.php#pricing" class="btn-ghost-light">View Pricing</a>
+                    <a href="index.php#gallery" class="btn-ghost-light">See Our Lot</a>
                 </div>
             </div>
         </div>

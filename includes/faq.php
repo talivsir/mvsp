@@ -60,6 +60,7 @@ $json_ld = json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 <section class="faq-section" id="faq">
     <div class="container">
         <div class="section-header text-center" data-scroll-reveal>
+            <span class="section-eyebrow section-eyebrow--center">Good to Know</span>
             <h2 class="section-title">Frequently Asked Questions</h2>
             <p class="section-subtitle">Answers to common questions about storing your vehicle in Central Maui, minutes from Kahului Airport (OGG).</p>
         </div>

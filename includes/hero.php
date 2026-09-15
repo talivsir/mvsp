@@ -3,6 +3,15 @@
    ============================================================ */ ?>
 
 <section class="lux-hero" id="hero" aria-label="Vehicle storage in Central Maui, minutes from Kahului Airport">
+    <noscript><style>.lux-hero__content{opacity:1!important;transform:none!important;}</style></noscript>
+
+    <div class="lux-hero__slideshow" aria-hidden="true">
+        <img src="img/banner-1.jpg" alt="" class="lux-hero__photo is-active" fetchpriority="high">
+        <img src="img/banner-2.jpg" alt="" class="lux-hero__photo">
+        <img src="img/banner-3.jpg" alt="" class="lux-hero__photo">
+        <img src="img/banner-4.jpg" alt="" class="lux-hero__photo">
+    </div>
+    <div class="lux-hero__overlay" aria-hidden="true"></div>
 
     <!-- Ambient background layers -->
     <div class="lux-hero__bg" aria-hidden="true">
@@ -60,28 +69,6 @@
             </ul>
 
         </div><!-- /.lux-hero__content -->
-
-        <!-- ── RIGHT: Car visual ──────────────────────── -->
-        <div class="lux-hero__visual">
-            <div class="lux-hero__car-glow" aria-hidden="true"></div>
-
-            <!-- Light 3D glass frame holding the (transparent) car image -->
-            <div class="lux-hero__stage">
-                <img
-                    src="assets/images/sports-car.png"
-                    alt="Vehicle stored with Maui Vehicle Storage near Kahului Airport (OGG)"
-                    class="lux-hero__car"
-                    draggable="false"
-                    fetchpriority="high"
-                >
-
-                <!-- Floating glass stat card -->
-                <div class="lux-hero__stat">
-                    <span class="lux-hero__stat-num">500<span>+</span></span>
-                    <span class="lux-hero__stat-label">Vehicles safely<br>stored on Maui</span>
-                </div>
-            </div>
-        </div><!-- /.lux-hero__visual -->
 
     </div><!-- /.lux-hero__inner -->
 
