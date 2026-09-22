@@ -131,6 +131,8 @@ include __DIR__ . '/includes/header.php';
                                 </div>
                                 <span>Message sent successfully! We will contact you shortly.</span>
                             </div>
+
+                            <div class="submit-error-msg" id="contactErrorMsg"></div>
                         </div>
                     </form>
                 </div>

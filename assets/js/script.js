@@ -315,29 +315,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /* --- 11. Contact Form Validation & Animation --- */
-    const contactForm = document.getElementById('mainContactForm');
-    if (contactForm) {
-        // Initial setup for live validation
-        const inputs = contactForm.querySelectorAll('.floating-input, .floating-select');
+    /* --- 11. Enquiry Forms (Contact page + Book Now modal) ---
+       Both forms share the same backend (includes/send-enquiry.php), which
+       validates server-side and sends the enquiry by SMTP. This wires up
+       client-side validation + a real fetch() submission for any form
+       matching the config below. */
+    function wireEnquiryForm(form, submitBtn, successMsg, errorMsg) {
+        if (!form || !submitBtn) return;
+
+        const inputs = form.querySelectorAll('.floating-input, .floating-select');
         inputs.forEach(input => {
-            input.addEventListener('input', () => {
+            const clearError = () => {
                 if (input.checkValidity()) {
                     input.closest('.floating-group').classList.remove('error');
                 }
-            });
-            input.addEventListener('change', () => {
-                if (input.checkValidity()) {
-                    input.closest('.floating-group').classList.remove('error');
-                }
-            });
+            };
+            input.addEventListener('input', clearError);
+            input.addEventListener('change', clearError);
         });
 
-        contactForm.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             let isValid = true;
-            
             inputs.forEach(input => {
                 const group = input.closest('.floating-group');
                 if (!input.checkValidity()) {
@@ -347,23 +347,119 @@ document.addEventListener('DOMContentLoaded', () => {
                     group.classList.remove('error');
                 }
             });
+            if (!isValid) return;
 
-            if (isValid) {
-                const submitBtn = document.getElementById('submitBtn');
-                const successMsg = document.getElementById('successMsg');
-                
-                // Add loading state
-                submitBtn.classList.add('loading');
-                submitBtn.disabled = true;
-
-                // Simulate network request (1.5s delay)
-                setTimeout(() => {
-                    submitBtn.classList.remove('loading');
-                    submitBtn.style.display = 'none';
-                    successMsg.style.display = 'flex';
-                    contactForm.reset();
-                }, 1500);
+            if (errorMsg) {
+                errorMsg.classList.remove('show');
+                errorMsg.textContent = '';
             }
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+
+            const payload = Object.fromEntries(new FormData(form).entries());
+
+            fetch('includes/send-enquiry.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    submitBtn.classList.remove('loading');
+                    if (data.success) {
+                        submitBtn.style.display = 'none';
+                        if (successMsg) {
+                            const textEl = successMsg.querySelector('span');
+                            if (textEl && data.message) textEl.textContent = data.message;
+                            successMsg.style.display = 'flex';
+                        }
+                        form.reset();
+                    } else {
+                        submitBtn.disabled = false;
+                        if (errorMsg) {
+                            errorMsg.textContent = data.message || 'Something went wrong. Please try again.';
+                            errorMsg.style.display = ''; // clear any stray inline display so the .show class rule applies
+                            errorMsg.classList.add('show');
+                        }
+                    }
+                })
+                .catch(() => {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                    if (errorMsg) {
+                        errorMsg.textContent = 'Network error — please check your connection and try again.';
+                        errorMsg.style.display = '';
+                        errorMsg.classList.add('show');
+                    }
+                });
+        });
+    }
+
+    wireEnquiryForm(
+        document.getElementById('mainContactForm'),
+        document.getElementById('submitBtn'),
+        document.getElementById('successMsg'),
+        document.getElementById('contactErrorMsg')
+    );
+
+    wireEnquiryForm(
+        document.getElementById('enquiryForm'),
+        document.getElementById('enquirySubmitBtn'),
+        document.getElementById('enquirySuccessMsg'),
+        document.getElementById('enquiryErrorMsg')
+    );
+
+    /* --- Book Now: shared quick-enquiry modal --- */
+    const enquiryModal = document.getElementById('enquiryModal');
+    if (enquiryModal) {
+        const enquiryCloseBtn = document.getElementById('enquiryModalClose');
+        const enquiryForm = document.getElementById('enquiryForm');
+        const enquirySubmitBtn = document.getElementById('enquirySubmitBtn');
+        const enquirySuccessMsg = document.getElementById('enquirySuccessMsg');
+        const enquiryErrorMsg = document.getElementById('enquiryErrorMsg');
+        const enquirySource = document.getElementById('enquirySource');
+
+        function openEnquiryModal(sourceLabel) {
+            if (enquirySource) enquirySource.value = sourceLabel || 'Book Now';
+            // Reset to a clean form each time it's reopened.
+            if (enquiryForm) {
+                enquiryForm.reset();
+                enquiryForm.querySelectorAll('.floating-group.error').forEach(g => g.classList.remove('error'));
+                enquiryForm.style.display = '';
+            }
+            if (enquirySubmitBtn) { enquirySubmitBtn.style.display = ''; enquirySubmitBtn.disabled = false; }
+            if (enquirySuccessMsg) enquirySuccessMsg.style.display = 'none';
+            if (enquiryErrorMsg) { enquiryErrorMsg.classList.remove('show'); enquiryErrorMsg.textContent = ''; }
+
+            enquiryModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeEnquiryModal() {
+            enquiryModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('[data-open-enquiry]').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                openEnquiryModal(trigger.textContent.trim() || 'Book Now');
+                // Close the mobile slide menu if the trigger was inside it.
+                const mobileMenu = document.getElementById('mobileSlideMenu');
+                const mobileBtn = document.getElementById('mobileMenuBtn');
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    if (mobileBtn) mobileBtn.classList.remove('active');
+                }
+            });
+        });
+
+        if (enquiryCloseBtn) enquiryCloseBtn.addEventListener('click', closeEnquiryModal);
+        enquiryModal.addEventListener('click', (e) => {
+            if (e.target === enquiryModal) closeEnquiryModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && enquiryModal.classList.contains('active')) closeEnquiryModal();
         });
     }
 

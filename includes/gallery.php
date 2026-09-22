@@ -10,72 +10,76 @@ $lotCategories = [
     'vehicles' => [
         'label' => 'Vehicles',
         'items' => [
-            ['img' => 'img/lot/vehicles-1.jpg', 'title' => 'Everyday Ride',      'sub' => 'Stored on Maui'],
-            ['img' => 'img/lot/vehicles-2.jpg', 'title' => 'Ready to Roll',      'sub' => 'Cars, Trucks & More'],
-            ['img' => 'img/lot/vehicles-3.jpg', 'title' => 'Family SUV',         'sub' => 'Safe & Secure'],
-            ['img' => 'img/lot/vehicles-4.jpg', 'title' => 'Weekend Cruiser',    'sub' => 'On Our Maui Lot'],
-            ['img' => 'img/lot/vehicles-5.jpg', 'title' => 'Daily Driver',       'sub' => 'Stored on Maui'],
-            ['img' => 'img/lot/vehicles-6.jpg', 'title' => 'Island Ready',       'sub' => 'Cars, Trucks & More'],
+            ['img' => 'img/lot/vehicles-1.jpg', 'title' => 'Off-Road Ready',     'sub' => 'Stored on Maui'],
+            ['img' => 'img/lot/vehicles-2.jpg', 'title' => 'Weekend Cruiser',    'sub' => 'Cars, Trucks & More'],
+            ['img' => 'img/lot/vehicles-3.jpg', 'title' => 'Sunset Convertible', 'sub' => 'Safe & Secure'],
+            ['img' => 'img/lot/vehicles-4.jpg', 'title' => 'Island Ready',       'sub' => 'On Our Maui Lot'],
         ],
     ],
     'storage' => [
         'label' => 'Storage',
         'items' => [
             ['img' => 'img/lot/storage-1.jpg', 'title' => 'Covered Storage',    'sub' => 'On Our Maui Lot'],
-            ['img' => 'img/lot/storage-2.jpg', 'title' => 'Secure Bays',        'sub' => 'Cars, Boats & RVs'],
-            ['img' => 'img/lot/storage-3.jpg', 'title' => 'Gated & Watched',    'sub' => '24/7 Peace of Mind'],
-            ['img' => 'img/lot/storage-4.jpg', 'title' => 'Room for Everything','sub' => 'Boats, RVs & Fleets'],
-            ['img' => 'img/lot/storage-5.jpg', 'title' => 'Central Maui',       'sub' => 'Minutes from OGG'],
+            ['img' => 'img/lot/storage-2.jpg', 'title' => 'Secure Bays',        'sub' => 'Cars, Trucks & More'],
+            ['img' => 'img/lot/storage-3.jpg', 'title' => 'Our Facility',       'sub' => 'Central Maui'],
+            ['img' => 'img/lot/storage-4.jpg', 'title' => 'Classics Welcome',   'sub' => 'Stored with Care'],
+            ['img' => 'img/lot/storage-5.jpg', 'title' => 'Room for Everything','sub' => 'Boats, RVs & Fleets'],
         ],
     ],
     'detailing' => [
         'label' => 'Detailing',
         'items' => [
-            ['img' => 'img/lot/detailing-1.jpg', 'title' => 'Hand Wash & Detail',  'sub' => 'Ready When You Are'],
-            ['img' => 'img/lot/detailing-2.jpg', 'title' => 'Spot-Free Finish',    'sub' => 'Detailing Services'],
-            ['img' => 'img/lot/detailing-3.jpg', 'title' => 'Interior Refresh',    'sub' => 'Fresh & Clean'],
-            ['img' => 'img/lot/detailing-4.jpg', 'title' => 'Paint Correction',    'sub' => 'Detailing Services'],
-            ['img' => 'img/lot/detailing-5.jpg', 'title' => 'Pre-Pickup Prep',     'sub' => 'Washed & Ready'],
+            ['img' => 'img/lot/detailing-1.jpg', 'title' => 'Full-Service Care',   'sub' => 'Vehicle Service & Detailing'],
+            ['img' => 'img/lot/detailing-2.jpg', 'title' => 'Interior Detailing',  'sub' => 'Clean Rides, Happier Journeys'],
+            ['img' => 'img/lot/detailing-3.jpg', 'title' => 'Trusted Vehicle Care','sub' => 'For a Smoother Maui Journey'],
+            ['img' => 'img/lot/detailing-4.jpg', 'title' => 'Hand Wash & Detail',  'sub' => 'Ready When You Are'],
+            ['img' => 'img/lot/detailing-5.jpg', 'title' => 'Complete Detailing',  'sub' => 'Wash, Wax & Paint Protection'],
         ],
     ],
     'registrations' => [
         'label' => 'Registrations',
         'items' => [
-            ['img' => 'img/lot/registrations-1.jpg', 'title' => 'Registration Help',       'sub' => 'Renewals & Transfers'],
-            ['img' => 'img/lot/registrations-2.jpg', 'title' => 'Title & Plate Guidance',   'sub' => 'We Handle the Paperwork'],
-            ['img' => 'img/lot/registrations-3.jpg', 'title' => 'Vehicle Registration',     'sub' => 'Fast & Friendly'],
-            ['img' => 'img/lot/registrations-4.jpg', 'title' => 'Out-of-State Transfers',   'sub' => 'Made Simple'],
-            ['img' => 'img/lot/registrations-5.jpg', 'title' => 'Expert Assistance',        'sub' => 'Registration Services'],
+            ['img' => 'img/lot/registrations-1.jpg', 'title' => 'Registration Assistance',  'sub' => 'Renewals & Transfers'],
+            ['img' => 'img/lot/registrations-2.jpg', 'title' => 'Title & Registration',     'sub' => 'We Handle the Paperwork'],
+            ['img' => 'img/lot/registrations-3.jpg', 'title' => 'On-the-Spot Service',      'sub' => 'Fast & Friendly'],
+            ['img' => 'img/lot/registrations-4.jpg', 'title' => 'Mobile Registration',      'sub' => 'We Come to You'],
+            ['img' => 'img/lot/registrations-5.jpg', 'title' => 'Registration Help',        'sub' => 'On Our Maui Lot'],
         ],
     ],
     'driving-test' => [
         'label' => 'Driving Test',
         'items' => [
-            ['img' => 'img/lot/driving-test-1.jpg', 'title' => 'DMV Road Test',          'sub' => 'Fully Insured Vehicle'],
-            ['img' => 'img/lot/driving-test-2.jpg', 'title' => 'Test-Ready Car',         'sub' => 'Inspected & Compliant'],
-            ['img' => 'img/lot/driving-test-3.jpg', 'title' => 'Driving Test in Progress','sub' => 'Confidence Behind the Wheel'],
-            ['img' => 'img/lot/driving-test-4.jpg', 'title' => 'Student Driver',         'sub' => 'DMV Rental'],
-            ['img' => 'img/lot/driving-test-5.jpg', 'title' => 'Pass with Confidence',   'sub' => 'DMV Test Vehicle'],
+            ['img' => 'img/lot/driving-test-1.jpg', 'title' => 'Test-Day Guidance',       'sub' => 'Confidence Behind the Wheel'],
+            ['img' => 'img/lot/driving-test-2.jpg', 'title' => 'Test Passed',             'sub' => 'Ready to Drive'],
+            ['img' => 'img/lot/driving-test-3.jpg', 'title' => 'Student Driver',          'sub' => 'DMV Rental'],
+            ['img' => 'img/lot/driving-test-4.jpg', 'title' => 'Pass with Confidence',    'sub' => 'DMV Test Vehicle'],
+            ['img' => 'img/lot/driving-test-5.jpg', 'title' => 'DMV Road Test',           'sub' => 'Fully Insured Vehicle'],
         ],
     ],
     'containers' => [
         'label' => 'Containers',
         'items' => [
             ['img' => 'img/lot/containers-1.jpg', 'title' => 'Container Storage',      'sub' => 'Secure & Flexible'],
-            ['img' => 'img/lot/containers-2.jpg', 'title' => 'Private Containers',     'sub' => 'Shielded from the Elements'],
-            ['img' => 'img/lot/containers-3.jpg', 'title' => '24/7 Access',            'sub' => 'On Our Maui Lot'],
-            ['img' => 'img/lot/containers-4.jpg', 'title' => 'Extra Protection',       'sub' => 'Sealed Storage'],
-            ['img' => 'img/lot/containers-5.jpg', 'title' => 'More Space',             'sub' => 'For a Brighter Tomorrow'],
-            ['img' => 'img/lot/containers-6.jpg', 'title' => 'Trusted Local Storage',  'sub' => 'Containers on Maui'],
+            ['img' => 'img/lot/containers-2.jpg', 'title' => 'Loading & Handling',     'sub' => 'Careful, Professional Service'],
+            ['img' => 'img/lot/containers-3.jpg', 'title' => 'Arriving by Sea',        'sub' => 'Dockside Ready'],
+            ['img' => 'img/lot/containers-4.jpg', 'title' => 'Stacked & Secure',       'sub' => 'Sealed Storage'],
+            ['img' => 'img/lot/containers-5.jpg', 'title' => 'Extra Protection',       'sub' => 'Shielded from the Elements'],
         ],
     ],
 ];
 
-// "All" tab = every photo from every category, in category order.
+// Shuffle each tab's photo order so the carousel doesn't scroll in the
+// same 1-2-3-4-5 sequence every time — re-randomized on every page load.
+foreach ($lotCategories as $slug => $cat) {
+    shuffle($lotCategories[$slug]['items']);
+}
+
+// "All" tab = every photo from every category, shuffled together.
 $lotAllItems = [];
 foreach ($lotCategories as $cat) {
     $lotAllItems = array_merge($lotAllItems, $cat['items']);
 }
+shuffle($lotAllItems);
 
 function renderLotTrack($items) {
     // Duplicated so the CSS animation (translateX to -50%) loops seamlessly.

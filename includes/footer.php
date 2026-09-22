@@ -79,11 +79,7 @@
         <div class="footer-bottom">
             <p class="footer-copy">&copy; <?php echo date('Y'); ?> <a href="index.php">Maui Vehicle Storage</a>. All rights reserved.</p>
 
-            <div class="footer-socials">
-                <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-                <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
-            </div>
+            <p class="footer-credit">Designed and developed by <a href="https://linkedin.com/in/taliv-ansari" target="_blank" rel="noopener noreferrer">Taliv Ansari</a></p>
 
             <div class="legal-links">
                 <a href="privacy-policy.php">Privacy Policy</a>
@@ -93,6 +89,80 @@
 
     </div>
 </footer>
+
+<!-- Book Now — Quick Enquiry Modal (shared across the whole site) -->
+<div class="enquiry-modal-overlay" id="enquiryModal">
+    <div class="enquiry-modal glass-panel">
+        <button class="enquiry-modal__close" id="enquiryModalClose" aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+
+        <div class="enquiry-modal__head">
+            <span class="section-eyebrow">Reserve Your Spot</span>
+            <h3>Quick Enquiry</h3>
+            <p>Tell us a bit about your vehicle and we'll get back to you shortly.</p>
+        </div>
+
+        <form id="enquiryForm" novalidate>
+            <input type="text" name="website" class="enquiry-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="source" id="enquirySource" value="Book Now Modal">
+
+            <div class="floating-group">
+                <input type="text" id="enq-name" name="name" class="floating-input" placeholder=" " required>
+                <label for="enq-name" class="floating-label">Full Name</label>
+                <span class="error-msg">Please enter your full name</span>
+            </div>
+
+            <div class="form-row">
+                <div class="floating-group">
+                    <input type="tel" id="enq-phone" name="phone" class="floating-input" placeholder=" " required>
+                    <label for="enq-phone" class="floating-label">Phone Number</label>
+                    <span class="error-msg">Please enter a valid phone number</span>
+                </div>
+                <div class="floating-group">
+                    <input type="email" id="enq-email" name="email" class="floating-input" placeholder=" " required>
+                    <label for="enq-email" class="floating-label">Email Address</label>
+                    <span class="error-msg">Please enter a valid email address</span>
+                </div>
+            </div>
+
+            <div class="floating-group">
+                <select id="enq-service" name="service" class="floating-select">
+                    <option value="" selected>General Enquiry</option>
+                    <option value="Indoor Storage">Indoor Storage</option>
+                    <option value="Outdoor/Fleet Storage">Outdoor / Fleet Storage</option>
+                    <option value="Airport/Pier Pickup">Airport / Pier Pickup</option>
+                    <option value="Wash & Detailing">Wash &amp; Detailing</option>
+                    <option value="DMV Rental">DMV Rental</option>
+                </select>
+                <label for="enq-service" class="floating-label select-label">Interested Service</label>
+            </div>
+
+            <div class="floating-group">
+                <textarea id="enq-message" name="message" class="floating-input floating-textarea" placeholder=" " rows="4"></textarea>
+                <label for="enq-message" class="floating-label">Message (optional)</label>
+            </div>
+
+            <div class="form-submit-container">
+                <button type="submit" class="btn btn-primary btn-lg btn-animated btn-submit-form" id="enquirySubmitBtn">
+                    <span class="btn-text">Send Enquiry</span>
+                    <svg class="btn-loader" viewBox="0 0 50 50" style="display:none;">
+                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                    </svg>
+                </button>
+
+                <div class="submit-success-msg" id="enquirySuccessMsg" style="display:none;">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <span id="enquirySuccessText">Thank you! Your enquiry has been sent.</span>
+                </div>
+
+                <div class="submit-error-msg" id="enquiryErrorMsg"></div>
+            </div>
+        </form>
+    </div>
+</div>
 
 <!-- Back to Top Button -->
 <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">

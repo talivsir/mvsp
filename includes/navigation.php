@@ -72,7 +72,7 @@ $is_mobile_menu = isset($is_mobile) && $is_mobile;
                             <div class="featured-card-content">
                                 <h5>Reserve Your Spot</h5>
                                 <p>Limited indoor spaces available for the season.</p>
-                                <a href="contact.php" class="link-arrow">Book Now <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/></svg></a>
+                                <a href="contact.php" class="link-arrow" data-open-enquiry>Book Now <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/></svg></a>
                             </div>
                         </div>
                     </div>

@@ -14,6 +14,18 @@ define('BIZ_PHONE', '+18085759008');
 define('BIZ_PHONE_DISPLAY', '(808) 575-9008');
 define('BIZ_EMAIL', 'mauivehiclestorage@gmail.com');
 
+// --- Enquiry form / SMTP settings ---
+// SMTP_PASSWORD must be a Gmail "App Password" (16 characters, generated at
+// myaccount.google.com/apppasswords with 2-Step Verification on) — NOT the
+// normal Gmail login password, which Google will reject for SMTP.
+define('SMTP_HOST', 'smtp.gmail.com');
+define('SMTP_PORT', 587);
+define('SMTP_USERNAME', 'desiuncle901@gmail.com');
+define('SMTP_PASSWORD', ''); // <-- set the Gmail App Password here before going live
+define('SMTP_FROM_EMAIL', 'desiuncle901@gmail.com');
+define('SMTP_FROM_NAME', SITE_NAME);
+define('ENQUIRY_TO_EMAIL', 'desiuncle901@gmail.com');
+
 // Local Business Schema Data
 $business_schema = [
     "@context" => "https://schema.org",
